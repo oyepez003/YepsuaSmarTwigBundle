@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+  <parameters>
+    <parameter key="html.builder.class">\YsHTML</parameter>
+    <parameter key="jquery.core.builder.class">\YsJQuery</parameter>
+    <parameter key="jquery.ui.dialog.class">\YsHTML</parameter>
+    <parameter key="jquery.ui.dialog.class">\YsUIDialog</parameter>
+    <parameter key="jquery.ui.tabs.class">\YsUITabs</parameter>
+    <parameter key="jquery.ui.accordion.class">\YsUIAccordion</parameter>
+    <parameter key="jquery.ui.progressbar.class">\YsUIProgressbar</parameter>
+    <parameter key="jquery.ui.slider.class">\YsUISlider</parameter>
+    <parameter key="jquery.ui.autocomplete.class">\YsUIAutocomplete</parameter>
+    <parameter key="jquery.ui.datepicker.class">\YsUIDatepicker</parameter>
+    <parameter key="jquery.ui.datetimepicker.class">\YsUIDateTimepicker</parameter>
+    <parameter key="jquery.ui.button.class">\YsUIButton</parameter>
+    <parameter key="jquery.ui.multiselect.class">\YsUIMultiselect</parameter>
+    <parameter key="jquery.ui.picklist.class">\YsUIPickList</parameter>
+    <parameter key="jquery.ui.popup.class">\YsUIPopUp</parameter>
+    <parameter key="jquery.ui.selectmenu.class">\YsUISelectMenu</parameter>
+    <parameter key="jquery.ui.expander.class">\YsUIExpander</parameter>
+    <parameter key="jquery.ui.splitter.class">\YsUISplitter</parameter>
+    <parameter key="jquery.ui.dynaselect.class">\YsUIDynamicSelect</parameter>
+    <parameter key="jquery.ui.menu.class">\YsUIMenu</parameter>
+    <parameter key="jquery.ui.panel.class">\YsUIPanel</parameter>
+    <parameter key="jquery.ui.tooltip.class">\YsUITooltip</parameter>
+    <parameter key="jquery.ui.draggable.class">\YsUIDraggable</parameter>
+    <parameter key="jquery.ui.droppable.class">\YsUIDroppable</parameter>
+    <parameter key="jquery.ui.resizable.class">\YsUIResizable</parameter>
+    <parameter key="jquery.ui.effect.class">\YsUIEffect</parameter>
+  </parameters>
+  <services>
+    <!-- TWIG EXTENSIONS -->
+    <service id="twig.extension.jquery.ui.core" class="Yepsua\SmarTwigBundle\Twig\Extension\UICoreExtension">
+      <tag name="twig.extension" alias="ui.core" />
+      <call method="setBuilders">
+        <argument type="collection">
+          <argument key="ui.html">%html.builder.class%</argument>
+          <argument key="ui.jqueryCore">%jquery.core.builder.class%</argument>
+          <argument key="ui.dialog">%jquery.ui.dialog.class%</argument>
+          <argument key="ui.tabs">%jquery.ui.tabs.class%</argument>
+          <argument key="ui.accordion">%jquery.ui.accordion.class%</argument>
+          <argument key="ui.progressbar">%jquery.ui.progressbar.class%</argument>
+          <argument key="ui.slider">%jquery.ui.slider.class%</argument>
+          <argument key="ui.autocomplete">%jquery.ui.autocomplete.class%</argument>
+          <argument key="ui.datepicker">%jquery.ui.datepicker.class%</argument>
+          <argument key="ui.datetimepicker">%jquery.ui.datetimepicker.class%</argument>
+          <argument key="ui.button">%jquery.ui.button.class%</argument>
+          <argument key="ui.multiselect">%jquery.ui.multiselect.class%</argument>
+          <argument key="ui.picklist">%jquery.ui.picklist.class%</argument>
+          <argument key="ui.popup">%jquery.ui.popup.class%</argument>
+          <argument key="ui.selectmenu">%jquery.ui.selectmenu.class%</argument>
+          <argument key="ui.expander">%jquery.ui.expander.class%</argument>
+          <argument key="ui.splitter">%jquery.ui.splitter.class%</argument>
+          <argument key="ui.dynaselect">%jquery.ui.dynaselect.class%</argument>
+          <argument key="ui.menu">%jquery.ui.menu.class%</argument>
+          <argument key="ui.panel">%jquery.ui.panel.class%</argument>
+          <argument key="ui.tooltip">%jquery.ui.tooltip.class%</argument>
+          <argument key="ui.draggable">%jquery.ui.draggable.class%</argument>
+          <argument key="ui.droppable">%jquery.ui.droppable.class%</argument>
+          <argument key="ui.resizable">%jquery.ui.resizable.class%</argument>
+          <argument key="ui.effect">%jquery.ui.effect.class%</argument>
+        </argument>   
+      </call>      
+    </service>
+    <service id="twig.extension.js.sintax" class="Yepsua\SmarTwigBundle\Twig\Extension\JsSintaxExtension">
+      <tag name="twig.extension" alias="js.sintax" />
+    </service>
+    <service id="twig.extension.jquery.core" class="Yepsua\SmarTwigBundle\Twig\Extension\JQueryCoreExtension">
+      <tag name="twig.extension" alias="jquery.core" />
+    </service>
+    <service id="twig.extension.html.tags" class="Yepsua\SmarTwigBundle\Twig\Extension\HTMLExtension">
+      <tag name="twig.extension" alias="html.tags" />
+    </service>
+    <!-- TWIG EXTENSIONS -->
+  </services>
+</container>

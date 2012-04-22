@@ -1,0 +1,23 @@
+{
+    "name": "yepsua/smartwig-bundle",
+    "version": "1.0.0",
+    "description": "The jQuery, jQueryUI (and more) Symfony Bundle",
+    "keywords": ["templating","twig","extensions","jquery","UI","RIA","jQuery4PHP"],
+    "homepage": "http://smartwig.yepsua.com",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Omar Yepez",
+            "email": "omar.yepez@yepsua.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*"
+    },
+    "autoload": {
+        "psr-0": { "Yepsua\\SmarTwigBundle": "" }
+    },
+    "target-dir": "Yepsua/SmarTwigBundle"
+}

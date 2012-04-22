@@ -1,0 +1,30 @@
+/* Multiselect
+----------------------------------*/
+
+.ui-picklist { border: solid 1px; font-size: 0.8em; }
+.ui-picklist ul { -moz-user-select: none; }
+.ui-picklist li { margin: 0; padding: 0; cursor: default; line-height: 20px; height: 20px; font-size: 11px; list-style: none; }
+.ui-picklist li a { color: #999; text-decoration: none; padding: 0; display: block; float: left; cursor: pointer;}
+.ui-picklist li.ui-draggable-dragging { padding-left: 10px; }
+
+.ui-picklist div.selected { position: relative; padding: 0; margin: 0; border: 0; float:left; }
+.ui-picklist ul.selected { position: relative; padding: 0; overflow: auto; overflow-x: hidden; background: #fff; margin: 0; list-style: none; border: 0; position: relative; width: 100%; }
+.ui-picklist ul.selected li { }
+
+.ui-picklist div.available { position: relative; padding: 0; margin: 0; border: 0; float:left; border-left: 1px solid; }
+.ui-picklist ul.available { position: relative; padding: 0; overflow: auto; overflow-x: hidden; background: #fff; margin: 0; list-style: none; border: 0; width: 100%; }
+.ui-picklist ul.available li { padding-left: 10px; }
+ 
+.ui-picklist .ui-state-default { border: none; margin-bottom: 1px; position: relative; padding-left: 20px;}
+.ui-picklist .ui-state-hover { border: none; }
+.ui-picklist .ui-widget-header {border: none; font-size: 11px; margin-bottom: 1px;}
+ 
+.ui-picklist .add-all { float: right; padding: 7px;}
+.ui-picklist .remove-all { float: right; padding: 7px;}
+.ui-picklist .search { float: left; padding: 4px;}
+.ui-picklist .count { float: left; padding: 7px;}
+
+.ui-picklist li span.ui-icon-arrowthick-2-n-s { position: absolute; left: 2px; }
+.ui-picklist li a.action { position: absolute; right: 2px; top: 2px; }
+ 
+.ui-picklist input.search { height: 14px; padding: 1px; opacity: 0.5; margin: 4px; width: 100px; }

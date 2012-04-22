@@ -1,0 +1,14 @@
+.ui-tabs-header li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+.ui-panel-content {height:90%; padding:0.1em; position:relative; width:100%; display:inline-block;}
+.ui-panel-title {margin:0;padding:0.4em;text-align:center;}
+.ui-panel-footer {position:absolute;background-image:none;border-width:1px 0 0;bottom:0;display:block;margin:0.5em 0 0;text-align:left;width:99%;}
+.ui-panel-footer-content {padding:0.3em 1em 0.5em 0.4em;}
+.ui-panel-section {vertical-align:top;padding:0 0.5em 0.5em 0.4em}
+.ui-resizable-helper { border: 1px dotted gray; }
+
+.ui-selecting { background: #FECA40; }
+.ui-selected { background: #F39814; color: white; }
+
+.ui-layout-panel-section { display:inline-block; }
+
+.ui-jq4php-toolbar{  padding:3px 2px; }
