@@ -44,7 +44,7 @@ unzip into vendor/bundles/Yepsua/SmarTwigBundle
 
 # Configuration
 
-## 1) Add the Yepsua namespace to your autoloader (app/autoload.php)
+## 1) Add the Yepsua namespace to your autoloader
 
 ``` php
 <?php
@@ -56,7 +56,7 @@ $loader->registerNamespaces(array(
 );
 ```
 
-## 2) Activate the jQuery4PHP library in your autoloader (app/autoload.php)
+## 2) Activate the jQuery4PHP library in your autoloader
 
 Copy the next code at end of file
 
@@ -67,7 +67,7 @@ include_once 'path/to/YepSua/Labs/RIA/jQuery4PHP/YsJQueryAutoloader.php';
 YsJQueryAutoloader::register();
 ```
 
-## 3) Add the YepsuaSmarTwigBundle to your application kernel (app/AppKernel.php)
+## 3) Add the YepsuaSmarTwigBundle to your application kernel
 
 ``` php
 <?php
@@ -104,7 +104,7 @@ $ php app/console assets:install web
 </head>
 <body>
   {% ui_dialog  %}
-    
+    Hello World!.
   {% end_ui_dialog %}
 </body>
 </html>
