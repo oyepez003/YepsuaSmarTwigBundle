@@ -17,7 +17,7 @@
     <parameter key="jquery.ui.datepicker.class">\YsUIDatepicker</parameter>
     <parameter key="jquery.ui.datetimepicker.class">\YsUIDateTimepicker</parameter>
     <parameter key="jquery.ui.button.class">\YsUIButton</parameter>
-    <parameter key="jquery.ui.multiselect.class">\YsUIMultiselect</parameter>
+    <parameter key="jquery.ui.multiselect.class">\YsUIMultiSelect</parameter>
     <parameter key="jquery.ui.picklist.class">\YsUIPickList</parameter>
     <parameter key="jquery.ui.popup.class">\YsUIPopUp</parameter>
     <parameter key="jquery.ui.selectmenu.class">\YsUISelectMenu</parameter>
