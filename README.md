@@ -19,7 +19,7 @@ Use one of the following:
 ### Using submodules
 
 ``` bash
-$ git clone --recursive http://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
+$ git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
 ```
 
 ### Download via HTTP:
