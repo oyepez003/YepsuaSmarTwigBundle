@@ -16,24 +16,10 @@ Visit the [showcase](http://smartwig.yepsua.com/web/)
 
 Use one of the following:
 
-### Using the vendors script
-
-Add the following lines in your ``deps`` file
-
-```
-[YepsuaSmarTwigBundle]
-    git=http://github.com/oyepez003/YepsuaSmarTwigBundle.git
-    target=/bundles/Yepsua/SmarTwigBundle
-```
-
-Run the vendors script
-
-    ./bin/vendors update
-
 ### Using submodules
 
 ``` bash
-$ git submodule add http://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
+$ git clone --recursive http://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
 ```
 
 ### Download via HTTP:
@@ -51,7 +37,7 @@ unzip into vendor/bundles/Yepsua/SmarTwigBundle
 // app/autoload.php
 
 $loader->registerNamespaces(array(
-    'Yepsua' => __DIR__.'/../vendor/bundles/Yepsua',
+    'Yepsua' => __DIR__.'/../vendor/bundles',
     // ...
 );
 ```
@@ -63,7 +49,7 @@ Copy the next code at end of file
 ``` php
 <?php
 // app/autoload.php
-include_once 'path/to/YepSua/Labs/RIA/jQuery4PHP/YsJQueryAutoloader.php';
+include_once __DIR__.'/../vendor/bundles/Yepsua/SmarTwigBundle/vendor/YepSua/Labs/RIA/jQuery4PHP/YsJQueryAutoloader.php';
 YsJQueryAutoloader::register();
 ```
 
