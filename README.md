@@ -12,21 +12,23 @@ Visit the [showcase](http://smartwig.yepsua.com/web/)
 
 # Installation
 
-## Add YepsuaSmarTwigBundle to your vendor/bundles/ directory
+## Add YepsuaSmarTwigBundle to your ``vendor/bundles/`` directory
 
 Use one of the following:
 
-### Using submodules
+### Using GIT
 
 ``` bash
 $ git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
 ```
 
-### Download via HTTP:
+### Downloading the Packages:
 
 Download the sourcecode from https://github.com/oyepez003/YepsuaSmarTwigBundle/downloads
-unzip into vendor/bundles/Yepsua/SmarTwigBundle
+unzip into ``vendor/bundles/Yepsua/SmarTwigBundle``
 
+Download jQuery4PHP from https://github.com/oyepez003/jQuery4PHP/downloads
+unzip into ``vendor/bundles/Yepsua/SmarTwigBundle/vendor/``
 
 # Configuration
 
@@ -68,7 +70,7 @@ public function registerBundles()
 }
 ```
 
-## 4) Public assets
+## 4) Publishing assets
 
 Run the symfony command
 
