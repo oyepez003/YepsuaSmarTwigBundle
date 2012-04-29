@@ -12,7 +12,7 @@ Visit the [showcase](http://smartwig.yepsua.com/web/)
 
 # Installation
 
-## Add YepsuaSmarTwigBundle to your ``vendor/bundles/`` directory
+## Add YepsuaSmarTwigBundle to your vendor/bundles/ directory
 
 Use one of the following:
 
