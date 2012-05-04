@@ -2,10 +2,8 @@
 
 namespace Yepsua\SmarTwigBundle\Twig\Extension;
 
-class UICoreExtension extends \Twig_Extension {
-  
-  protected $builders;
-  
+class UICoreExtension extends UIWidgetExtension {
+   
   /**
    * Returns the token parser instance to add to the existing list.
    *
@@ -47,31 +45,5 @@ class UICoreExtension extends \Twig_Extension {
    */
   public function getName() {
     return 'ui.core';
-  }
-  
-  /**
-   *
-   * @param type $widgetId
-   * @return widget 
-   */
-  public function getWidget($widgetId){
-    $widget = $this->builders[$widgetId];
-    return new $widget();
-  }
-  
-  /**
-   *
-   * @return type 
-   */
-  public function getBuilders() {
-    return $this->builders;
-  }
-  
-  /**
-   *
-   * @param type $builders 
-   */
-  public function setBuilders($builders) {
-    $this->builders = $builders;
   }
 }

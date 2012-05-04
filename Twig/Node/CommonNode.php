@@ -33,6 +33,7 @@ class CommonNode extends Twig_Node {
   protected $inSelector;
   protected $isExec;
   protected $isBuiltByListener;
+  protected $isPlugin;
   
   public function __construct(array $nodes = array(), array $attributes = array(), $lineno = 0, $tag = null) {
     parent::__construct($nodes, $attributes, $lineno, $tag);
@@ -332,6 +333,14 @@ class CommonNode extends Twig_Node {
 
   public function setBuiltByListener($isBuiltByListener) {
     $this->isBuiltByListener = $isBuiltByListener;
+  }
+  
+  public function isPlugin() {
+    return $this->isPlugin;
+  }
+
+  public function setIsPlugin($isPlugin) {
+    $this->isPlugin = $isPlugin;
   }
   
   public function getRenderizableConditionNode($node = null){
@@ -801,8 +810,16 @@ class CommonNode extends Twig_Node {
   }
   
   public function compileExtension(Twig_Compiler $compiler){
-    $compiler->write(sprintf('%s = $this->env->getExtension(\'ui.core\')->getWidget(\'ui.%s\');',$this->getVarName(),$this->getWidgetName()));
+    if($this->isPlugin()){
+      $compiler->write(sprintf('$this->env->getExtension(\'ui.core\')->getWidget(\'ui.jqueryCore\')->usePlugin(\'%s\');',$this->getPluginName()));
+      $compiler->raw("\n");
+    }
+    $compiler->write(sprintf('%s = $this->env->getExtension(\'%s\')->getWidget(\'ui.%s\');',$this->getVarName(),$this->getExtensionIndex(),$this->getWidgetName()));
     $compiler->raw("\n");
+  }
+  
+  public function getExtensionIndex(){
+    return ($this->isPlugin()) ? 'ui.addons' :'ui.core';
   }
   
   public function compileInitWidget(Twig_Compiler $compiler){
@@ -958,4 +975,23 @@ class CommonNode extends Twig_Node {
     return false;
   }
   
+  public function getHTMLAttrs($args){
+    $args = func_get_args();
+    $attrs = array(
+      'button'=>array('accept','align','alt','checked','disabled','maxlength','name','readonly','size','src','type','value'),
+      'a' => array('charset','coords','href','hreflang','name','rel','rev','shape','rect','circle','poly','target')   
+    );
+    $attr = array();
+    foreach($args as $arg){
+      if(isset($attrs[$arg])){
+        $attr = array_merge($attr, $attrs[$arg]);
+      }
+    }
+    return $attr;
+  }
+  
+  public function getPluginName() {
+    return 'plugin';
+  }
+ 
 }

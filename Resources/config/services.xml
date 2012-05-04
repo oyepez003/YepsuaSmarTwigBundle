@@ -31,6 +31,9 @@
     <parameter key="jquery.ui.droppable.class">\YsUIDroppable</parameter>
     <parameter key="jquery.ui.resizable.class">\YsUIResizable</parameter>
     <parameter key="jquery.ui.effect.class">\YsUIEffect</parameter>
+    <parameter key="jquery.ui.blockUI.class">\YsBlockUI</parameter>
+    <parameter key="jquery.ui.box.class">\YsJQBox</parameter>
+    <parameter key="jquery.ui.colorpicker.class">\YsJQColorPicker</parameter>
   </parameters>
   <services>
     <!-- TWIG EXTENSIONS -->
@@ -63,6 +66,16 @@
           <argument key="ui.droppable">%jquery.ui.droppable.class%</argument>
           <argument key="ui.resizable">%jquery.ui.resizable.class%</argument>
           <argument key="ui.effect">%jquery.ui.effect.class%</argument>
+        </argument>   
+      </call>      
+    </service>
+    <service id="twig.extension.jquery.ui.addons" class="Yepsua\SmarTwigBundle\Twig\Extension\UIAddonsExtension">
+      <tag name="twig.extension" alias="ui.addons" />
+      <call method="setBuilders">
+        <argument type="collection">
+          <argument key="ui.block">%jquery.ui.blockui.class%</argument>
+          <argument key="ui.box">%jquery.ui.box.class%</argument>
+          <argument key="ui.colorpicker">%jquery.ui.colorpicker.class%</argument>
         </argument>   
       </call>      
     </service>

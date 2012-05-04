@@ -12,6 +12,7 @@ use \Twig_Node_Expression_Name;
 class DatepickerNode extends SimpleNode {    
     
   protected $timepicker;
+  protected $rangepicker;
   protected $dateTimepicker;
   protected $inline;
 
@@ -22,6 +23,7 @@ class DatepickerNode extends SimpleNode {
       }
       $this->getNode('values')->removeNode('datetime');
     }
+    
     if($this->getNode('values')->hasNode('time')){
       if($this->getNodeValue('time')){
         if(!$this->getNode('values')->hasNode('ampm')){
@@ -32,6 +34,12 @@ class DatepickerNode extends SimpleNode {
         $this->setTimepicker(true);
       }
       $this->getNode('values')->removeNode('time');
+    }
+    if($this->getNode('values')->hasNode('range')){
+      if($this->getNodeValue('range')){
+        $this->setRangepicker(true);
+      }
+      $this->getNode('values')->removeNode('range');
     }
     if($this->getNode('values')->hasNode('inline')){
       if($this->getNodeValue('inline')){
@@ -60,7 +68,17 @@ class DatepickerNode extends SimpleNode {
     }
   }
   
-  public function compileBuilder(Twig_Compiler $compiler){
+  public function compileBuilderFuntcionName(Twig_Compiler $compiler){
+    if($this->isTimepicker()){
+      $compiler->raw('->timepicker()');
+    }elseif($this->isRangepicker ()){
+      $compiler->raw('->daterangepicker()');   
+    }else{
+      parent::compileBuilderFuntcionName($compiler);
+    }
+  }
+  
+  /*public function compileBuilder(Twig_Compiler $compiler){
     if($this->isTimepicker()){
       $compiler->write(sprintf('echo %s->timepicker()',$this->getVarName()));
       $compiler->indent();
@@ -71,10 +89,12 @@ class DatepickerNode extends SimpleNode {
       $compiler->raw(')');
       $compiler->write("\n");
       $compiler->write(sprintf("->addOptions(%s)\n",$this->getOptionsVarName()));
-    }else{
-      parent::compileBuilder($compiler);
-    }
-  }
+    }elseif($this->isRangepicker ()){
+        
+      }else{
+        parent::compileBuilder($compiler);
+      }
+  }*/
 
   public function getWidgetName(){
     $name = 'datepicker';
@@ -106,5 +126,13 @@ class DatepickerNode extends SimpleNode {
 
   public function setDateTimepicker($dateTimepicker) {
     $this->dateTimepicker = $dateTimepicker;
+  }
+  
+  public function isRangepicker() {
+    return $this->rangepicker;
+  }
+
+  public function setRangepicker($rangepicker) {
+    $this->rangepicker = $rangepicker;
   }
 }

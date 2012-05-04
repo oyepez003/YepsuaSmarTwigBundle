@@ -95,6 +95,6 @@ class ButtonNode extends SimpleNode {
   }
 
   public function configureHTMLProperties(){
-    return array('accept','align','alt','checked','disabled','maxlength','name','readonly','size','src','type','value');
+    return $this->getHTMLAttrs('button','a');
   }
 }
