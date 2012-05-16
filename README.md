@@ -32,7 +32,7 @@ Add the following lines in your deps file
     target=/bundles/Yepsua/SmarTwigBundle
 
 [jQuery4PHP]
-    git=https://oyepez003@github.com/oyepez003/jQuery4PHP.git
+    git=http://github.com/oyepez003/jQuery4PHP.git
     target=/bundles/Yepsua/SmarTwigBundle/vendor/
 ```
 
