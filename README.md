@@ -22,6 +22,26 @@ Use one of the following:
 $ git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
 ```
 
+### Using the deps file
+
+Add the following lines in your deps file
+
+``` yml
+[YepsuaSmarTwigBundle]
+    git=http://github.com/oyepez003/YepsuaSmarTwigBundle.git
+    target=/bundles/Yepsua/SmarTwigBundle
+
+[YepsuaSmarTwigBundle]
+    git=https://oyepez003@github.com/oyepez003/jQuery4PHP.git
+    target=/bundles/Yepsua/SmarTwigBundle/vendor/
+```
+
+and run the vendors script:
+
+``` bash
+php bin/vendors update
+```
+
 ### Downloading the Packages:
 
 Download the sourcecode from https://github.com/oyepez003/YepsuaSmarTwigBundle/downloads

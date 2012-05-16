@@ -34,6 +34,12 @@
     <parameter key="jquery.ui.blockUI.class">\YsBlockUI</parameter>
     <parameter key="jquery.ui.box.class">\YsJQBox</parameter>
     <parameter key="jquery.ui.colorpicker.class">\YsJQColorPicker</parameter>
+    <parameter key="jquery.ui.notify.class">\YsPNotify</parameter>
+    <parameter key="jquery.ui.keys.class">\YsKeys</parameter>
+    <parameter key="jquery.ui.monitor.class">\YsJQMonitor</parameter>
+    <parameter key="jquery.ui.keypad.class">\YsJQKeypad</parameter>
+    <parameter key="jquery.ui.calculator.class">\YsJQCalculator</parameter>
+    <parameter key="jquery.ui.layout.class">\YsJLayout</parameter>
   </parameters>
   <services>
     <!-- TWIG EXTENSIONS -->
@@ -76,6 +82,12 @@
           <argument key="ui.block">%jquery.ui.blockui.class%</argument>
           <argument key="ui.box">%jquery.ui.box.class%</argument>
           <argument key="ui.colorpicker">%jquery.ui.colorpicker.class%</argument>
+          <argument key="ui.notify">%jquery.ui.notify.class%</argument>
+          <argument key="ui.hotkey">%jquery.ui.keys.class%</argument>
+          <argument key="ui.monitor">%jquery.ui.monitor.class%</argument>
+          <argument key="ui.keypad">%jquery.ui.keypad.class%</argument>
+          <argument key="ui.calculator">%jquery.ui.calculator.class%</argument>
+          <argument key="ui.layout">%jquery.ui.layout.class%</argument>
         </argument>   
       </call>      
     </service>

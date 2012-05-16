@@ -38,7 +38,7 @@ class CommonNode extends Twig_Node {
   public function __construct(array $nodes = array(), array $attributes = array(), $lineno = 0, $tag = null) {
     parent::__construct($nodes, $attributes, $lineno, $tag);
     $this->setOnlyHTML(false);
-    $this->setOnlyHTML(false);
+    $this->setOnlyJsS($this->getNode('values')->hasNode('builtIn'));
     $this->setInSelector(true);
     $this->setExec(true);
     $this->setBuiltByListener($this->getNode('values')->hasNode('builtBy'));
@@ -799,13 +799,17 @@ class CommonNode extends Twig_Node {
       $compiler->raw(sprintf('"%s"',$this->getId()));
     }
   }
-
+  
   public function compileSelector(Twig_Compiler $compiler, $selector = '#'){
-    if($this->getId() instanceof Twig_Node){
-      $compiler->raw(sprintf('"%s" . ', $selector));
-      $compiler->subcompile($this->getId());
+    if($this->getNode('values')->hasNode('builtIn')){
+      $compiler->subcompile($this->getNode('values')->getNode('builtIn'));
     }else{
-      $compiler->raw(sprintf('"%s%s"', $selector, $this->getId()));
+      if($this->getId() instanceof Twig_Node){
+        $compiler->raw(sprintf('"%s" . ', $selector));
+        $compiler->subcompile($this->getId());
+      }else{
+        $compiler->raw(sprintf('"%s%s"', $selector, $this->getId()));
+      }
     }
   }
   
