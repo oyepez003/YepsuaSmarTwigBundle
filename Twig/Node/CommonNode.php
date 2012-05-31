@@ -615,7 +615,7 @@ class CommonNode extends Twig_Node {
   }
   
   public function configureHTMLProperties(){
-    return array();
+    return $this->getHTMLAttrs('div');
   }
   
   public function compileHtmlProperties(Twig_Compiler $compiler, $args = array()){
@@ -983,7 +983,15 @@ class CommonNode extends Twig_Node {
     $args = func_get_args();
     $attrs = array(
       'button'=>array('accept','align','alt','checked','disabled','maxlength','name','readonly','size','src','type','value'),
-      'a' => array('charset','coords','href','hreflang','name','rel','rev','shape','rect','circle','poly','target')   
+      'a' => array('charset','coords','href','hreflang','name','rel','rev','shape','rect','circle','poly','target'),
+      'div' => array('align'), 
+      'input' => array('accept','align','alt','checked','disabled','maxlength','name','readonly','size','src','type','value'),
+      'form' => array('action','accept','accept-charset','enctype','method','name','target'),
+      'select' => array('disabled','multiple','name','size'),  
+      'option' => array('disabled','label','selected','value'),
+      'optionWithoutLabel' => array('selected','disabled','value'),
+      'ul' => array('compact','compact'),
+      'li' => array('type','value'),
     );
     $attr = array();
     foreach($args as $arg){

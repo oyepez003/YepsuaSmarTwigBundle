@@ -2,17 +2,17 @@
 
 namespace Yepsua\SmarTwigBundle\Twig\TokenParser;
 
-use Yepsua\SmarTwigBundle\Twig\Node\IdleMonitorNode;
+use Yepsua\SmarTwigBundle\Twig\Node\FormWizardNode;
 
-class IdleMonitorTokenParser extends CommonTokenParser {
+class FormWizardTokenParser extends CommonTokenParser {
   
   public function __construct() {
     parent::__construct();
-    $this->setHasContent(false);
+    $this->setHasContent(true);
   }
   
   public function getNodeInstance(\Twig_Token $token){
-    return new IdleMonitorNode($this->getNames(), new \Twig_Node($this->getValues()), $token->getLine(), $this->getTag());
+    return new FormWizardNode($this->getNames(), new \Twig_Node($this->getValues()), $token->getLine(), $this->getTag());
   }
 
   /**
@@ -21,6 +21,6 @@ class IdleMonitorTokenParser extends CommonTokenParser {
    * @param string The tag name
    */
   public function getTag() {
-    return 'ui_idleMonitor';
+    return 'ui_formWizard';
   }
 }

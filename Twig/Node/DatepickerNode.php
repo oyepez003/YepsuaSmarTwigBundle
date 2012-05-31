@@ -78,30 +78,16 @@ class DatepickerNode extends SimpleNode {
     }
   }
   
-  /*public function compileBuilder(Twig_Compiler $compiler){
-    if($this->isTimepicker()){
-      $compiler->write(sprintf('echo %s->timepicker()',$this->getVarName()));
-      $compiler->indent();
-      $compiler->indent();
-      $compiler->write("\n");
-      $compiler->write('->in(');
-      $this->compileSelector($compiler);
-      $compiler->raw(')');
-      $compiler->write("\n");
-      $compiler->write(sprintf("->addOptions(%s)\n",$this->getOptionsVarName()));
-    }elseif($this->isRangepicker ()){
-        
-      }else{
-        parent::compileBuilder($compiler);
-      }
-  }*/
-
   public function getWidgetName(){
     $name = 'datepicker';
     if($this->isDateTimepicker() || $this->isTimepicker()){
       $name = 'datetimepicker';
     }
     return $name;
+  }
+  
+  public function configureHTMLProperties(){
+    return $this->getHTMLAttrs('div','input');
   }
   
   public function isInline() {

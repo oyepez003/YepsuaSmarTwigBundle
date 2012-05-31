@@ -47,6 +47,10 @@ class ColorpickerNode extends SimpleNode {
     }
   }
   
+  public function configureHTMLProperties(){
+    return $this->getHTMLAttrs('div','input');
+  }
+  
   public function compileEndWidget(Twig_Compiler $compiler){
     return false;
   }

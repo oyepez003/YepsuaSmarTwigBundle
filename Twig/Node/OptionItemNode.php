@@ -45,9 +45,9 @@ class OptionItemNode extends SimpleNode {
   }
   
   public function configureHTMLProperties(){
-    return array('selected','disabled','value');
+    return $this->getHTMLAttrs('optionWithoutLabel');
   }
-  
+    
   public function getWidgetName(){
     return 'html';
   }

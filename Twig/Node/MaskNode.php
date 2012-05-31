@@ -5,30 +5,30 @@ namespace Yepsua\SmarTwigBundle\Twig\Node;
 /**
  * 
  */
-class BoxNode extends SimpleNode {    
+class MaskNode extends SimpleNode {    
     
   public function __construct($names, $values, $lineno, $tag = null) {
     parent::__construct($names, $values, $lineno, $tag);
-    $this->setOnlyJsS(true);
+    $this->setOnlyJsS(!$this->getNode('values')->hasNode('value'));
     $this->setIsPlugin(true);
   }
 
   public function configureCallableMethods(){
     return array(
       'for' => array('method' => 'in'),
-      'toolbar' => array('method' => '_withButtons'),
-      'errorMessage' => array('method' => '_errorMsg'),
-      'nextTitle' => array('method' => '_nextTitle'),
-      'prevTitle' => array('method' => '_prevTitle'),
-      'closeTitle' => array('method' => '_closeTitle'),
+      'mode' => array('method' => '_type'),
     );
   }
 
   public function getWidgetName(){
-    return 'box';
+    return 'mask';
   }
 
   public function getPluginName() {
-    return 'jqBox';
+    return 'jqMask';
+  }
+
+  public function configureHTMLProperties(){
+    return $this->getHTMLAttrs('div','input');
   }
 }

@@ -40,6 +40,10 @@
     <parameter key="jquery.ui.keypad.class">\YsJQKeypad</parameter>
     <parameter key="jquery.ui.calculator.class">\YsJQCalculator</parameter>
     <parameter key="jquery.ui.layout.class">\YsJLayout</parameter>
+    <parameter key="jquery.ui.mask.class">\YsJQMask</parameter>
+    <parameter key="jquery.ui.formWizard.class">\YsFormWizard</parameter>
+    <parameter key="jquery.ui.ajaxForm.class">\YsJQForm</parameter>
+    <parameter key="jquery.ui.validation.class">\YsJQValidate</parameter>
   </parameters>
   <services>
     <!-- TWIG EXTENSIONS -->
@@ -88,6 +92,10 @@
           <argument key="ui.keypad">%jquery.ui.keypad.class%</argument>
           <argument key="ui.calculator">%jquery.ui.calculator.class%</argument>
           <argument key="ui.layout">%jquery.ui.layout.class%</argument>
+          <argument key="ui.mask">%jquery.ui.mask.class%</argument>
+          <argument key="ui.formWizard">%jquery.ui.formWizard.class%</argument>
+          <argument key="ui.ajaxForm">%jquery.ui.ajaxForm.class%</argument>
+          <argument key="ui.validation">%jquery.ui.validation.class%</argument>
         </argument>   
       </call>      
     </service>

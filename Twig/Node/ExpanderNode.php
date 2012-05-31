@@ -4,7 +4,7 @@ namespace Yepsua\SmarTwigBundle\Twig\Node;
 
 class ExpanderNode extends SimpleNode {
   
-    public function getWidgetName(){
-      return 'expander';
-    }
+  public function getWidgetName(){
+    return 'expander';
+  }
 }

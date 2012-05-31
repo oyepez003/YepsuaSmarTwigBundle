@@ -21,7 +21,7 @@ class ContentNode extends SimpleNode {
     //if($this->getNode('values')->getNode('value') instanceof \Twig_Node_Expression_GetAttr ){
     if($this->getNode('values')->hasNode('type')){
       $type = $this->getNodeValue('type');
-      if($type === 'footer_panel'){
+      if($type === 'footer_panel' || $type === 'panel_footer'){
         if($this->getNode('values')->hasNode('class')){
           $this->prependValueInNode(
             'class', 
@@ -69,10 +69,6 @@ class ContentNode extends SimpleNode {
     
     $compiler->write(');');
     $compiler->raw("\n");
-  }
-  
-  public function configureHTMLProperties(){
-    return array('selected','disabled','value');
   }
   
   public function getWidgetName(){

@@ -3,6 +3,7 @@
 namespace Yepsua\SmarTwigBundle\Twig\Extension;
 
 use \YsJQuery;
+use \YsArgument;
 
 class JQueryCoreExtension extends \Twig_Extension {
 
@@ -26,6 +27,7 @@ class JQueryCoreExtension extends \Twig_Extension {
   public function getFunctions(){
     return array(
         'jQuery' => new \Twig_Function_Method($this, 'jsJquery',array('is_safe' => array('html'))),
+        'arg' => new \Twig_Function_Method($this, 'argument',array('is_safe' => array('html'))),
     );
   }
   
@@ -35,6 +37,10 @@ class JQueryCoreExtension extends \Twig_Extension {
       $jquery->execute($sintax);
     }
     return $jquery;
+  }
+  
+  public function argument($value){
+    return new YsArgument($value);
   }
   
   /**

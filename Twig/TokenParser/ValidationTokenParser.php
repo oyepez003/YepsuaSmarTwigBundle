@@ -2,9 +2,9 @@
 
 namespace Yepsua\SmarTwigBundle\Twig\TokenParser;
 
-use Yepsua\SmarTwigBundle\Twig\Node\IdleMonitorNode;
+use Yepsua\SmarTwigBundle\Twig\Node\ValidationNode;
 
-class IdleMonitorTokenParser extends CommonTokenParser {
+class ValidationTokenParser extends CommonTokenParser {
   
   public function __construct() {
     parent::__construct();
@@ -12,7 +12,7 @@ class IdleMonitorTokenParser extends CommonTokenParser {
   }
   
   public function getNodeInstance(\Twig_Token $token){
-    return new IdleMonitorNode($this->getNames(), new \Twig_Node($this->getValues()), $token->getLine(), $this->getTag());
+    return new ValidationNode($this->getNames(), new \Twig_Node($this->getValues()), $token->getLine(), $this->getTag());
   }
 
   /**
@@ -21,6 +21,6 @@ class IdleMonitorTokenParser extends CommonTokenParser {
    * @param string The tag name
    */
   public function getTag() {
-    return 'ui_idleMonitor';
+    return 'ui_validation';
   }
 }

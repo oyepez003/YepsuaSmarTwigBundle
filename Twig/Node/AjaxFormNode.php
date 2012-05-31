@@ -7,32 +7,36 @@ use \Twig_Compiler;
 /**
  * 
  */
-class CalculatorNode extends KeypadNode {    
-
-  protected $inline;
-
+class AjaxFormNode extends SimpleNode {    
+    
   public function __construct($names, $values, $lineno, $tag = null) {
     parent::__construct($names, $values, $lineno, $tag);
     $this->setIsPlugin(true);
   }
 
+  public function configureCallableMethods(){
+    return array(
+      'update' => array('method' => '_target'),
+    );
+  }
+  
   public function compileBuilderFuntcionName(Twig_Compiler $compiler){
-    if($this->getNode('values')->hasNode('scientific') && $this->getNodeValue('scientific')){
-        $compiler->raw('->scientific()');
+    if($this->getNode('values')->hasNode('withValidation') && $this->getNodeValue('withValidation')){
+      $compiler->raw('->ajaxSubmit()');
     }else{
       parent::compileBuilderFuntcionName($compiler);
     }
-  }  
-  
+  }
+
   public function getWidgetName(){
-    return 'calculator';
+    return 'ajaxForm';
   }
 
   public function getPluginName() {
-    return 'jqCalculator';
+    return 'jqForm';
   }
   
   public function configureHTMLProperties(){
-    return $this->getHTMLAttrs('div','input');
+    return $this->getHTMLAttrs('form');
   }
 }

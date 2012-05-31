@@ -52,10 +52,6 @@ class HeaderNode extends SimpleNode {
     $compiler->raw("\n");
   }
   
-  public function configureHTMLProperties(){
-    return array('selected','disabled','value');
-  }
-  
   public function getWidgetName(){
     return 'html';
   }

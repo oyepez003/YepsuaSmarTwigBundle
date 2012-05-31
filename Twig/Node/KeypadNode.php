@@ -68,7 +68,11 @@ class KeypadNode extends SimpleNode {
 
   public function getPluginName() {
     return 'jqKeypad';
-  }   
+  }
+  
+  public function configureHTMLProperties(){
+    return $this->getHTMLAttrs('div','input');
+  }
   
   public function isInline() {
     return $this->inline;

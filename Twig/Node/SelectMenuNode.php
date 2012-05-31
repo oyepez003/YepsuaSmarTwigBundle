@@ -9,7 +9,6 @@ class SelectMenuNode extends SimpleNode {
   }
   
   public function configureHTMLProperties(){
-    return array('disabled','multiple','name','size');
+    return $this->getHTMLAttrs('select');
   }
-  
 }
