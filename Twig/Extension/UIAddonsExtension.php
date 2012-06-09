@@ -5,6 +5,7 @@ namespace Yepsua\SmarTwigBundle\Twig\Extension;
 use \YsJQuery as JQuery;
 use \YsPNotify as Notify;
 use \YsJLayout as Layout;
+use \YsComponent as Component;
 
 class UIAddonsExtension extends UIWidgetExtension {
   
@@ -28,6 +29,9 @@ class UIAddonsExtension extends UIWidgetExtension {
         new \Yepsua\SmarTwigBundle\Twig\TokenParser\FormWizardTokenParser(),
         new \Yepsua\SmarTwigBundle\Twig\TokenParser\AjaxFormTokenParser(),
         new \Yepsua\SmarTwigBundle\Twig\TokenParser\ValidationTokenParser(),
+        new \Yepsua\SmarTwigBundle\Twig\TokenParser\BookletTokenParser(),
+        new \Yepsua\SmarTwigBundle\Twig\TokenParser\CycleTokenParser(),
+        new \Yepsua\SmarTwigBundle\Twig\TokenParser\RingTokenParser(),
     );
   }
   
@@ -46,6 +50,7 @@ class UIAddonsExtension extends UIWidgetExtension {
         'toggle_east' => new \Twig_Function_Method($this, 'toggleEast',array('is_safe' => array('html'))),
         'toggle_center' => new \Twig_Function_Method($this, 'toggleCenter',array('is_safe' => array('html'))),
         'animate_layout' => new \Twig_Function_Method($this, 'animateLayout',array('is_safe' => array('html'))),
+        'component_render' => new \Twig_Function_Method($this, 'componentRender',array('is_safe' => array('html'))),
     );
   }
 
@@ -96,6 +101,10 @@ class UIAddonsExtension extends UIWidgetExtension {
   public function animateLayout($layout,$region, $effect = 'bounce'){
     JQuery::usePlugin('jLayout');
     return str_replace(array('"'),array('\''),Layout::effect($layout,$region,$effect));
+  }
+  
+  public function componentRender(Component $component){
+    return $component;
   }
   
   /**

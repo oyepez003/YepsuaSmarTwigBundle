@@ -5,45 +5,48 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
   <parameters>
-    <parameter key="html.builder.class">\YsHTML</parameter>
-    <parameter key="jquery.core.builder.class">\YsJQuery</parameter>
-    <parameter key="jquery.ui.dialog.class">\YsHTML</parameter>
-    <parameter key="jquery.ui.dialog.class">\YsUIDialog</parameter>
-    <parameter key="jquery.ui.tabs.class">\YsUITabs</parameter>
-    <parameter key="jquery.ui.accordion.class">\YsUIAccordion</parameter>
-    <parameter key="jquery.ui.progressbar.class">\YsUIProgressbar</parameter>
-    <parameter key="jquery.ui.slider.class">\YsUISlider</parameter>
-    <parameter key="jquery.ui.autocomplete.class">\YsUIAutocomplete</parameter>
-    <parameter key="jquery.ui.datepicker.class">\YsUIDatepicker</parameter>
-    <parameter key="jquery.ui.datetimepicker.class">\YsUIDateTimepicker</parameter>
-    <parameter key="jquery.ui.button.class">\YsUIButton</parameter>
-    <parameter key="jquery.ui.multiselect.class">\YsUIMultiSelect</parameter>
-    <parameter key="jquery.ui.picklist.class">\YsUIPickList</parameter>
-    <parameter key="jquery.ui.popup.class">\YsUIPopUp</parameter>
-    <parameter key="jquery.ui.selectmenu.class">\YsUISelectMenu</parameter>
-    <parameter key="jquery.ui.expander.class">\YsUIExpander</parameter>
-    <parameter key="jquery.ui.splitter.class">\YsUISplitter</parameter>
-    <parameter key="jquery.ui.dynaselect.class">\YsUIDynamicSelect</parameter>
-    <parameter key="jquery.ui.menu.class">\YsUIMenu</parameter>
-    <parameter key="jquery.ui.panel.class">\YsUIPanel</parameter>
-    <parameter key="jquery.ui.tooltip.class">\YsUITooltip</parameter>
-    <parameter key="jquery.ui.draggable.class">\YsUIDraggable</parameter>
-    <parameter key="jquery.ui.droppable.class">\YsUIDroppable</parameter>
-    <parameter key="jquery.ui.resizable.class">\YsUIResizable</parameter>
-    <parameter key="jquery.ui.effect.class">\YsUIEffect</parameter>
-    <parameter key="jquery.ui.blockUI.class">\YsBlockUI</parameter>
-    <parameter key="jquery.ui.box.class">\YsJQBox</parameter>
-    <parameter key="jquery.ui.colorpicker.class">\YsJQColorPicker</parameter>
-    <parameter key="jquery.ui.notify.class">\YsPNotify</parameter>
-    <parameter key="jquery.ui.keys.class">\YsKeys</parameter>
-    <parameter key="jquery.ui.monitor.class">\YsJQMonitor</parameter>
-    <parameter key="jquery.ui.keypad.class">\YsJQKeypad</parameter>
-    <parameter key="jquery.ui.calculator.class">\YsJQCalculator</parameter>
-    <parameter key="jquery.ui.layout.class">\YsJLayout</parameter>
-    <parameter key="jquery.ui.mask.class">\YsJQMask</parameter>
-    <parameter key="jquery.ui.formWizard.class">\YsFormWizard</parameter>
-    <parameter key="jquery.ui.ajaxForm.class">\YsJQForm</parameter>
-    <parameter key="jquery.ui.validation.class">\YsJQValidate</parameter>
+    <parameter key="html.builder.class">YsHTML</parameter>
+    <parameter key="jquery.core.builder.class">YsJQuery</parameter>
+    <parameter key="jquery.ui.dialog.class">YsHTML</parameter>
+    <parameter key="jquery.ui.dialog.class">YsUIDialog</parameter>
+    <parameter key="jquery.ui.tabs.class">YsUITabs</parameter>
+    <parameter key="jquery.ui.accordion.class">YsUIAccordion</parameter>
+    <parameter key="jquery.ui.progressbar.class">YsUIProgressbar</parameter>
+    <parameter key="jquery.ui.slider.class">YsUISlider</parameter>
+    <parameter key="jquery.ui.autocomplete.class">YsUIAutocomplete</parameter>
+    <parameter key="jquery.ui.datepicker.class">YsUIDatepicker</parameter>
+    <parameter key="jquery.ui.datetimepicker.class">YsUIDateTimepicker</parameter>
+    <parameter key="jquery.ui.button.class">YsUIButton</parameter>
+    <parameter key="jquery.ui.multiselect.class">YsUIMultiSelect</parameter>
+    <parameter key="jquery.ui.picklist.class">YsUIPickList</parameter>
+    <parameter key="jquery.ui.popup.class">YsUIPopUp</parameter>
+    <parameter key="jquery.ui.selectmenu.class">YsUISelectMenu</parameter>
+    <parameter key="jquery.ui.expander.class">YsUIExpander</parameter>
+    <parameter key="jquery.ui.splitter.class">YsUISplitter</parameter>
+    <parameter key="jquery.ui.dynaselect.class">YsUIDynamicSelect</parameter>
+    <parameter key="jquery.ui.menu.class">YsUIMenu</parameter>
+    <parameter key="jquery.ui.panel.class">YsUIPanel</parameter>
+    <parameter key="jquery.ui.tooltip.class">YsUITooltip</parameter>
+    <parameter key="jquery.ui.draggable.class">YsUIDraggable</parameter>
+    <parameter key="jquery.ui.droppable.class">YsUIDroppable</parameter>
+    <parameter key="jquery.ui.resizable.class">YsUIResizable</parameter>
+    <parameter key="jquery.ui.effect.class">YsUIEffect</parameter>
+    <parameter key="jquery.ui.blockUI.class">YsBlockUI</parameter>
+    <parameter key="jquery.ui.box.class">YsJQBox</parameter>
+    <parameter key="jquery.ui.colorpicker.class">YsJQColorPicker</parameter>
+    <parameter key="jquery.ui.notify.class">YsPNotify</parameter>
+    <parameter key="jquery.ui.keys.class">YsKeys</parameter>
+    <parameter key="jquery.ui.monitor.class">YsJQMonitor</parameter>
+    <parameter key="jquery.ui.keypad.class">YsJQKeypad</parameter>
+    <parameter key="jquery.ui.calculator.class">YsJQCalculator</parameter>
+    <parameter key="jquery.ui.layout.class">YsJLayout</parameter>
+    <parameter key="jquery.ui.mask.class">YsJQMask</parameter>
+    <parameter key="jquery.ui.formWizard.class">YsFormWizard</parameter>
+    <parameter key="jquery.ui.ajaxForm.class">YsJQForm</parameter>
+    <parameter key="jquery.ui.validation.class">YsJQValidate</parameter>
+    <parameter key="jquery.ui.booklet.class">YsJQBooklet</parameter>
+    <parameter key="jquery.ui.cycle.class">YsJQCycle</parameter>
+    <parameter key="jquery.ui.ring.class">YsJQRing</parameter>
   </parameters>
   <services>
     <!-- TWIG EXTENSIONS -->
@@ -96,6 +99,9 @@
           <argument key="ui.formWizard">%jquery.ui.formWizard.class%</argument>
           <argument key="ui.ajaxForm">%jquery.ui.ajaxForm.class%</argument>
           <argument key="ui.validation">%jquery.ui.validation.class%</argument>
+          <argument key="ui.booklet">%jquery.ui.booklet.class%</argument>
+          <argument key="ui.cycle">%jquery.ui.cycle.class%</argument>
+          <argument key="ui.ring">%jquery.ui.ring.class%</argument>
         </argument>   
       </call>      
     </service>

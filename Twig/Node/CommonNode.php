@@ -541,12 +541,13 @@ class CommonNode extends Twig_Node {
    */
   public function buildId() {
     $id = null;
-    if ($this->getNode('values')->hasNode('id')) {
+    if ($this->getNode('values')->hasNode('id')
+        && $this->getNode('values')->getNode('id') instanceof Twig_Node_Expression_Constant ) {
       $id = $this->getNode('values')->getNode('id')->getAttribute('value');
     } else {
       $id = sprintf('%s%s',$this->getWidgetName(),rand(1, 1000));
     }
-    $this->removePropertie('id');
+    //$this->removePropertie('id');
     return $id;
   }
   
@@ -599,7 +600,9 @@ class CommonNode extends Twig_Node {
         $compiler->raw('%s"\',');
         $compiler->subcompile($node->getNode($attr));
         $compiler->raw(')');
-        $this->removePropertie($attr);
+        if($attr !== 'id'){
+          $this->removePropertie($attr);
+        }
       }
     }
     $compiler->raw(')');
@@ -793,9 +796,10 @@ class CommonNode extends Twig_Node {
   }
   
   public function compileWidgetId(Twig_Compiler $compiler){
-    if($this->getId() instanceof Twig_Node){
-      $compiler->subcompile($this->getId());
-    }else{
+    if ($this->getNode('values')->hasNode('id')
+        && !$this->getNode('values')->getNode('id') instanceof Twig_Node_Expression_Constant) {
+      $compiler->subcompile($this->getNode('values')->getNode('id'));
+    } else {
       $compiler->raw(sprintf('"%s"',$this->getId()));
     }
   }
@@ -804,10 +808,11 @@ class CommonNode extends Twig_Node {
     if($this->getNode('values')->hasNode('builtIn')){
       $compiler->subcompile($this->getNode('values')->getNode('builtIn'));
     }else{
-      if($this->getId() instanceof Twig_Node){
+      if ($this->getNode('values')->hasNode('id')
+        && !$this->getNode('values')->getNode('id') instanceof Twig_Node_Expression_Constant) {
         $compiler->raw(sprintf('"%s" . ', $selector));
-        $compiler->subcompile($this->getId());
-      }else{
+        $compiler->subcompile($this->getNode('values')->getNode('id'));
+      } else {
         $compiler->raw(sprintf('"%s%s"', $selector, $this->getId()));
       }
     }
