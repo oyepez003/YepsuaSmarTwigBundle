@@ -104,7 +104,7 @@ class UIAddonsExtension extends UIWidgetExtension {
   }
   
   public function componentRender(Component $component){
-    return $component;
+    return $component->draw();
   }
   
   /**

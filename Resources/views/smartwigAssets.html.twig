@@ -1,7 +1,7 @@
 {# UI-CORE #}
 <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/jquery.js') }}"></script>
 <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/jquery.ui.js') }}"></script>
-<link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/themes/yepsua/jquery.ui.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/themes/aristo/jquery.ui.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/jquery.ui.utilities.css') }}" />
 <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/jquery.wijmo.min.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/wijmo/jquery.wijmo.css') }}" />
@@ -105,3 +105,48 @@
 <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqgrid/jquery.jqGrid.min.js') }}"></script>
 <link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/jqgrid/ui.jqgrid.css')}}" />
 <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jquery.tablednd.js') }}"></script>
+
+{# plot #}
+<script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/jquery.jqplot.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/jqplot/jquery.jqplot.min.css')}}" />
+  {# plot-plugins #}
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.categoryAxisRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.dateAxisRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.canvasTextRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.barRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.dateAxisRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.pieRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.logAxisRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.blockRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.enhancedLegendRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.bubbleRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.funnelRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.donutRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.mekkoRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.mekkoAxisRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.meterGaugeRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.ohlcRenderer.min.js') }}"></script>
+
+  {#<script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.highlighter.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.BezierCurveRenderer.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.cursor.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.dragable.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.pointLabels.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/jqplot.trendline.min.js') }}"></script>#}
+  
+{# filemanager #}
+<script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/elfinder/jquery.elfinder.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/elrte/css/jquery.elfinder.css')}}" />
+  
+{# editor #}
+<script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/elrte/jquery.elrte.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/elrte/css/jquery.elrte.css')}}" />
+  
+{# treeview #}
+<script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jstree/jquery.jstree.js') }}"></script>
+  
+{# callendar #}
+<script type="text/javascript" src="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/js/plugins/fullcalendar/jquery.fullcalendar.min.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/yepsuasmartwig/jquery4php-assets/styles/fullcalendar/jquery.fullcalendar.css')}}" />
