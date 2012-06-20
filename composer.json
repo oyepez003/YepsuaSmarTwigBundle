@@ -14,11 +14,9 @@
     ],
     "require": {
         "php": ">=5.3.2",
-        "symfony/framework-bundle": "2.*",
         "yepsua/jQuery4PHP": "dev-master"
     },
     "autoload": {
         "psr-0": { "Yepsua\\SmarTwigBundle": "" }
-    },
-    "target-dir": "Yepsua/SmarTwigBundle"
+    }
 }
