@@ -15,7 +15,7 @@ Visit the [showcase](http://smartwig.yepsua.com/web/)
 ## For install on Symfony 2.0.x
 
 ``` bash
-$ git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
+git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
 ```
 
 ### For up to date the bundle
