@@ -21,6 +21,7 @@ $ git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git ve
 ### For up to date the bundle
 
 ``` bash
+cd vendor/bundles/Yepsua/SmarTwigBundle
 git pull -v --progress  "origin"
 git submodule update --init
 ```
