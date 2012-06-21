@@ -12,25 +12,44 @@ Visit the [showcase](http://smartwig.yepsua.com/web/)
 
 # Installation
 
-## Add YepsuaSmarTwigBundle to your vendor/bundles/ directory
-
-Use one of the following:
-
-### Using GIT
+## For install on Symfony 2.0.x
 
 ``` bash
 $ git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
 ```
 
-### Downloading the Packages:
+### For up to date the bundle
 
-Download the sourcecode from https://github.com/oyepez003/YepsuaSmarTwigBundle/downloads
-unzip into ``vendor/bundles/Yepsua/SmarTwigBundle``
+``` bash
+git pull -v --progress  "origin"
+git submodule update --init
+```
 
-Download jQuery4PHP from https://github.com/oyepez003/jQuery4PHP/downloads
-unzip into ``vendor/bundles/Yepsua/SmarTwigBundle/vendor/``
+## For install on Symfony 2.1.x
+
+Add the next dependency in the composer.json file
+
+``` yml
+"require": {
+        ...
+        "yepsua/smartwig-bundle": "dev-master",
+        ...
+    },
+```
+
+``` bash
+php composer.phar install
+```
+
+### For up to date the bundle
+
+``` bash
+php composer.phar update
+```
 
 # Configuration
+
+### *** Note: If you are using Sf 2.1.x go to step 3
 
 ## 1) Add the Yepsua namespace to your autoloader
 
