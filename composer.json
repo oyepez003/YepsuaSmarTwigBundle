@@ -19,5 +19,6 @@
     },
     "autoload": {
         "psr-0": { "Yepsua\\SmarTwigBundle": "" }
-    }
+    },
+    "target-dir": "Yepsua/SmarTwigBundle"
 }
