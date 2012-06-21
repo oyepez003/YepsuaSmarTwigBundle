@@ -15,15 +15,15 @@ Visit the [showcase](http://smartwig.yepsua.com/web/)
 ## For install on Symfony 2.0.x
 
 ``` bash
-git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
+$ git clone --recursive https://github.com/oyepez003/YepsuaSmarTwigBundle.git vendor/bundles/Yepsua/SmarTwigBundle
 ```
 
 ### For up to date the bundle
 
 ``` bash
-cd vendor/bundles/Yepsua/SmarTwigBundle
-git pull -v --progress  "origin"
-git submodule update --init
+$ cd vendor/bundles/Yepsua/SmarTwigBundle
+$ git pull -v --progress  "origin"
+$ git submodule update --init
 ```
 
 ## For install on Symfony 2.1.x
@@ -39,13 +39,13 @@ Add the next dependency in the composer.json file
 ```
 
 ``` bash
-php composer.phar install
+$ php composer.phar install
 ```
 
 ### For up to date the bundle
 
 ``` bash
-php composer.phar update
+$ php composer.phar update
 ```
 
 # Configuration
