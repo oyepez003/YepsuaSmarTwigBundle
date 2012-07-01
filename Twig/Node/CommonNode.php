@@ -8,6 +8,8 @@ use \Twig_Node_Expression;
 use \Twig_Node_Expression_Constant;
 use \Twig_Node_Expression_Name;
 
+use \Yepsua\SmarTwigBundle\Util\HTMLUtil;
+
 class CommonNode extends Twig_Node {
   
   private static $LOOP_VAR = 'loop';
@@ -609,12 +611,7 @@ class CommonNode extends Twig_Node {
   }
   
   public function getStandardHtmlProperties(){
-    $standard  = array('accesskey', 'class', 'dir', 'id', 'lang', 'style', 
-                       'tabindex', 'title');
-    $event  = array('onblur','onclick','ondblclick','ondblclick','onmousedown',
-                    'onmousemove','onmouseout','onmouseover','onmouseup',
-                    'onkeydown','onkeydown','onkeypress');
-    return array_merge($standard, $event, $this->configureHTMLProperties());
+    return array_merge(HTMLUtil::getStandardHtmlProperties(), $this->configureHTMLProperties());
   }
   
   public function configureHTMLProperties(){
@@ -869,9 +866,9 @@ class CommonNode extends Twig_Node {
   }
   
   public function compileListener(Twig_Compiler $compiler){
-    $compiler->write(sprintf('$jQuery = $this->env->getExtension(\'ui.core\')->getWidget(\'ui.jqueryCore\');'));
+    $compiler->write('$jQuery = $this->env->getExtension(\'ui.core\')->getWidget(\'ui.jqueryCore\');');
     $compiler->raw("\n");
-    $compiler->write(sprintf('echo $jQuery'));
+    $compiler->write('echo $jQuery');
     $compiler->indent();
     $compiler->indent();
     if($this->getNode('values')->hasNode('builtByEvent')){
@@ -893,7 +890,7 @@ class CommonNode extends Twig_Node {
   
   public function compileExecute(Twig_Compiler $compiler){
     if($this->isBuiltByListener()){
-      $compiler->write(');');
+      $compiler->write(')');
     }else{
       $compiler->write(sprintf('%s;',$this->getExecuteSintax()));
     }
@@ -901,6 +898,13 @@ class CommonNode extends Twig_Node {
     $compiler->outdent();
     if($this->isBuiltByListener()){
       $compiler->outdent();
+      $compiler->raw("\n");
+      $compiler->write('->setPreSintax("$(document).ready(function(){")');
+      $compiler->raw("\n");
+      $compiler->write('->setPostSintax("})")');
+      $compiler->raw("\n");
+      $compiler->write('->execute();');
+      $compiler->raw("\n");
       $compiler->outdent();
       $compiler->outdent();
     }
@@ -985,26 +989,7 @@ class CommonNode extends Twig_Node {
   }
   
   public function getHTMLAttrs($args){
-    $args = func_get_args();
-    $attrs = array(
-      'button'=>array('accept','align','alt','checked','disabled','maxlength','name','readonly','size','src','type','value'),
-      'a' => array('charset','coords','href','hreflang','name','rel','rev','shape','rect','circle','poly','target'),
-      'div' => array('align'), 
-      'input' => array('accept','align','alt','checked','disabled','maxlength','name','readonly','size','src','type','value'),
-      'form' => array('action','accept','accept-charset','enctype','method','name','target'),
-      'select' => array('disabled','multiple','name','size'),  
-      'option' => array('disabled','label','selected','value'),
-      'optionWithoutLabel' => array('selected','disabled','value'),
-      'ul' => array('compact','compact'),
-      'li' => array('type','value'),
-    );
-    $attr = array();
-    foreach($args as $arg){
-      if(isset($attrs[$arg])){
-        $attr = array_merge($attr, $attrs[$arg]);
-      }
-    }
-    return $attr;
+    return HTMLUtil::getHTMLAttrs(func_get_args());
   }
   
   public function getPluginName() {

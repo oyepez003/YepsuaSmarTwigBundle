@@ -3,7 +3,7 @@
 namespace Yepsua\SmarTwigBundle\Twig\TokenParser;
 
 //TODO DELETE
-use Yepsua\SmarTwigBundle\Twig\Node\ButtonNode;
+use Yepsua\SmarTwigBundle\Twig\Node\CommonNode;
 
 class CommonTokenParser extends \Twig_TokenParser {
 
@@ -30,7 +30,7 @@ class CommonTokenParser extends \Twig_TokenParser {
   
   public function getNodeInstance(\Twig_Token $token){
     //TODO DELETE
-    return new ButtonNode($this->getNames(), new \Twig_Node($this->getValues()), $token->getLine(), $this->getTag());
+    return new CommonNode($this->getNames(), new \Twig_Node($this->getValues()), $token->getLine(), $this->getTag());
   }
     
   public function parseOptionsTag(\Twig_Parser $parser,$hasContent = true,$method = 'decideBlockEnd'){

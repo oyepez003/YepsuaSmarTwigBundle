@@ -28,6 +28,12 @@ $ git submodule update --init
 
 ## For install on Symfony 2.1.x
 
+Download and make sure you have the composer.phar latest version running
+
+``` bash
+$ php composer.phar self-update
+```
+
 Add the next dependency in the composer.json file
 
 ``` yml

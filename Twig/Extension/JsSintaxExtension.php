@@ -16,6 +16,7 @@ class JsSintaxExtension extends \Twig_Extension {
         'js_function' => new \Twig_Function_Method($this, 'jsFunction'),
         'js_sintax' => new \Twig_Function_Method($this, 'jsSintax'),
         'js_call_function' => new \Twig_Function_Method($this, 'jsCallFunction'),
+        'js_callback' => new \Twig_Function_Method($this, 'jsCallFunction'),
     );
   }
   
