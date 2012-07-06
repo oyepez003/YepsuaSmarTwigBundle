@@ -357,7 +357,9 @@ class CommonNode extends Twig_Node {
 
   public function getCommonsCallableMethods(){
     return array(
-      'widgetVar' => array('method' => 'assignToVar'),
+      'widgetVar' => array('method' => 'assignToVar', 
+                           'args' => array(false)
+      ),
       'timeout' => array('method' => 'timeout'),
       'confirmation' => array('method' => 'confirmation'),  
       'condition' => array('method' => 'condition'),    
@@ -369,7 +371,7 @@ class CommonNode extends Twig_Node {
     $this->defineId();
     $this->defineVarName();
     $this->defineIsRenderizable();
-    $this->buildWidgetVar();
+    //$this->buildWidgetVar();
     $this->defineOptionsVarName();
     $this->buildSintaxConfiguration();
     if($this->isIterableNode()){
@@ -725,6 +727,12 @@ class CommonNode extends Twig_Node {
       if($this->getNode('values')->hasNode($name)){
         $compiler->write(sprintf('->%s(',$data['method']));
         $compiler->subcompile($this->getNode('values')->getNode($name));
+        if(isset($data['args'])){
+          foreach($data['args'] as $arg){
+            $compiler->raw(",");
+            $compiler->subcompile(new Twig_Node_Expression_Constant($arg, 0));
+          }
+        }
         $this->removePropertie($name);
         $compiler->raw(")\n");
       }
