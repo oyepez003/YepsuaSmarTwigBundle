@@ -1,0 +1,174 @@
+{# UI-CORE #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/jquery.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/jquery.ui.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/jquery.ui.touch.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/jquery.wijmo.min.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/ui/addons/*.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/date.js'
+               output='smartwig-assetics/js/smartwig-core.js' filter='yui_js' %}
+    <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+    
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/themes/yepsua/jquery.ui.css'
+               'bundles/yepsuasmartwig/jquery4php-assets/styles/jquery.ui.utilities.css'
+               'bundles/yepsuasmartwig/jquery4php-assets/styles/wijmo/jquery.wijmo.css'
+               'bundles/yepsuasmartwig/jquery4php-assets/styles/ui-addons/*.css'
+               output='smartwig-assetics/css/smartwig-core.css' filter="cssrewrite, yui_css" %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %}
+        
+{# Plugins #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/*.js' 
+               output='smartwig-assetics/js/jquery-plugins.js' filter='yui_js' %}
+    <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+    
+    
+{# mask #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/meio/jquery.meio.mask.js' 
+               output='smartwig-assetics/js/mask.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+
+{# blockUI #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/malsup/jquery.blockUI.js' 
+                output='smartwig-assetics/js/block.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+
+{# box #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/fancybox/jquery.fancybox.pack.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/fancybox/jquery.fancybox-buttons.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/fancybox/jquery.fancybox-thumbs.js'
+               output='smartwig-assetics/js/fancybox.js'
+                %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/fancybox/*.css' 
+               filter="cssrewrite, yui_css" output='smartwig-assetics/css/fancybox.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %}
+  
+{# colorpicker #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/colorpicker/jquery.colorpicker.min.js' 
+               output='smartwig-assetics/js/colorpicker.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/colorpicker/css/jquery.colorpicker.css' 
+                output='smartwig-assetics/css/colorpicker.css' filter="cssrewrite, yui_css" %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %}
+  
+{# notify #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/pnotify/jquery.pnotify.js' 
+                output='smartwig-assetics/js/notify.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/pnotify/jquery.pnotify.default.css' 
+                output='smartwig-assetics/css/notify.css' filter="cssrewrite, yui_css" %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %}
+
+{# notify #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/keys/*.js' 
+                output='smartwig-assetics/js/keys.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+
+{# monitor #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/monitor/jquery.idleTimer.js' 
+                output='smartwig-assetics/js/monitor.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+
+  
+{# keypad && calculator #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/keypad/jquery.keypad.pack.js' 
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/calculator/jquery.calculator.pack.js'  
+               output='smartwig-assetics/js/keypad.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/keypad/jquery.keypad.css' 
+               'bundles/yepsuasmartwig/jquery4php-assets/styles/calculator/jquery.calculator.css' 
+               output='smartwig-assetics/css/keypad.css' filter="cssrewrite, yui_css" %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %} 
+
+{# layout #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jLayout/*.js' 
+                output='smartwig-assetics/js/layout.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+
+
+{# form #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/malsup/jquery.form.js' 
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/bassistance/validate/jquery.validate.js' 
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/wizard/jquery.form.wizard.js'
+               output='smartwig-assetics/js/richform.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}  
+
+  
+{# booklet #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/booklet/jquery.booklet.min.js'  
+               filter='yui_js' output='smartwig-assetics/js/booklet.js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/booklet/jquery.booklet.css' 
+               filter="cssrewrite, yui_css" output='smartwig-assetics/css/booklet.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %} 
+    
+{# cycle #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/malsup/jquery.cycle.all.js' 
+               filter='yui_js' output='smartwig-assetics/js/cycle.js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}
+
+{# roundabout #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/roundabout/jquery.roundabout.min.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/roundabout/jquery.roundabout-shapes.min.js'
+               output='smartwig-assetics/js/roundabout.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}  
+  
+{# dataGrid #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqgrid/i18n/grid.locale-en.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqgrid/jquery.jqGrid.min.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jquery.tablednd.js'
+               output='smartwig-assetics/js/jqgrid.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}  
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/jqgrid/ui.jqgrid.css'
+               filter="cssrewrite, yui_css" output='smartwig-assetics/css/jqgrid.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %} 
+  
+{# jqPlot #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/jquery.jqplot.min.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jqplot/plugins/*.js'
+               output='smartwig-assetics/js/jqplot.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}  
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/jqplot/jquery.jqplot.min.css'
+               filter="cssrewrite, yui_css" output='smartwig-assetics/css/jqplot.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %}     
+    
+    
+{# treeview #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/jstree/jquery.jstree.js'
+               filter='yui_js' output='smartwig-assetics/js/treeview.js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}  
+
+{# fullcalendar #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/fullcalendar/jquery.fullcalendar.min.js'
+               filter='yui_js' output='smartwig-assetics/js/fullcalendar.js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}  
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/fullcalendar/jquery.fullcalendar.css'
+               filter="cssrewrite, yui_css" output='smartwig-assetics/css/fullcalendar.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %}

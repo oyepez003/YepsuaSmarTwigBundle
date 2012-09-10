@@ -28,7 +28,7 @@ $ git submodule update --init
 
 ## For install on Symfony 2.1.x
 
-Download and make sure you have the composer.phar latest version running
+Download and make sure you have the composer.phar latest version running the command:
 
 ``` bash
 $ php composer.phar self-update
@@ -39,19 +39,15 @@ Add the next dependency in the composer.json file
 ``` yml
 "require": {
         ...
-        "yepsua/smartwig-bundle": "dev-master",
+        "yepsua/smartwig-bundle": "dev-master"
         ...
     },
 ```
 
-``` bash
-$ php composer.phar install
-```
-
-### For up to date the bundle
+### For install and up to date the bundle
 
 ``` bash
-$ php composer.phar update
+$ php composer.phar update yepsua/smartwig-bundle
 ```
 
 # Configuration
