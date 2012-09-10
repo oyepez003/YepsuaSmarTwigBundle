@@ -12,3 +12,8 @@
 .ui-layout-panel-section { display:inline-block; }
 
 .ui-jq4php-toolbar{  padding:3px 2px; }
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0.4em;
+    position: relative;
+}
