@@ -12,6 +12,16 @@
             "email": "omar.yepez@yepsua.com"
         }
     ],
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ]
+    },
     "require": {
         "php": ">=5.3.2",
         "symfony/framework-bundle": "2.*",
@@ -20,5 +30,9 @@
     "autoload": {
         "psr-0": { "Yepsua\\SmarTwigBundle": "" }
     },
-    "target-dir": "Yepsua/SmarTwigBundle"
+    "target-dir": "Yepsua/SmarTwigBundle",
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    }
 }
