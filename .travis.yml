@@ -1,5 +1,4 @@
 language: php
-
 php:
   - 5.3
   - 5.4
@@ -11,10 +10,3 @@ env:
 
 before_script:
   - composer require symfony/framework-bundle:${SYMFONY_VERSION}
-  - composer install --dev
-
-script: phpunit --coverage-text
-
-notifications:
-  email:
-    - the-team@yepsua.com
