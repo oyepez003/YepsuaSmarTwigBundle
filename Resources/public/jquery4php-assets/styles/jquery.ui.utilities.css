@@ -17,3 +17,15 @@
     padding: 0.4em;
     position: relative;
 }
+
+.plupload_filelist .plupload_file_name{
+  width: auto !important;
+}
+
+.plupload_file_status, .plupload_file_size{
+    vertical-align: middle;
+}
+
+.wijmo-wijvideo .wijmo-wijvideo-controls li {
+    padding: 2px !important;
+}

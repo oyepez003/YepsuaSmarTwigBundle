@@ -47,6 +47,8 @@
     <parameter key="jquery.ui.booklet.class">YsJQBooklet</parameter>
     <parameter key="jquery.ui.cycle.class">YsJQCycle</parameter>
     <parameter key="jquery.ui.ring.class">YsJQRing</parameter>
+    <parameter key="jquery.ui.video.class">YsUIVideo</parameter>
+    <parameter key="jquery.ui.upload.class">YsUpload</parameter>
   </parameters>
   <services>
     <!-- TWIG EXTENSIONS -->
@@ -79,6 +81,7 @@
           <argument key="ui.droppable">%jquery.ui.droppable.class%</argument>
           <argument key="ui.resizable">%jquery.ui.resizable.class%</argument>
           <argument key="ui.effect">%jquery.ui.effect.class%</argument>
+          <argument key="ui.video">%jquery.ui.video.class%</argument>
         </argument>   
       </call>      
     </service>
@@ -102,6 +105,7 @@
           <argument key="ui.booklet">%jquery.ui.booklet.class%</argument>
           <argument key="ui.cycle">%jquery.ui.cycle.class%</argument>
           <argument key="ui.ring">%jquery.ui.ring.class%</argument>
+          <argument key="ui.upload">%jquery.ui.upload.class%</argument>
         </argument>   
       </call>      
     </service>

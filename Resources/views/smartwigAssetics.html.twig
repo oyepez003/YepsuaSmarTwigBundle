@@ -171,3 +171,14 @@
                filter="cssrewrite, yui_css" output='smartwig-assetics/css/fullcalendar.css' %}
     <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
 {% endstylesheets %}
+    
+{# plupload #}
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/plupload/plupload.full.js'
+               'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/plugins/plupload/jquery.ui.plupload.js'
+               output='smartwig-assetics/js/plupload.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}  
+{% stylesheets 'bundles/yepsuasmartwig/jquery4php-assets/styles/plupload/css/jquery.ui.plupload.css'
+               filter="cssrewrite, yui_css" output='smartwig-assetics/css/plupload.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
+{% endstylesheets %}

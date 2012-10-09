@@ -31,6 +31,7 @@ class HTMLUtil {
       'optionWithoutLabel' => array('selected','disabled','value'),
       'ul' => array('compact','compact'),
       'li' => array('type','value'),
+      'video' => array('autoplay','controls','height','loop','poster','preload','src','src'),
     );
     $attr = array();
     foreach($args as $arg){

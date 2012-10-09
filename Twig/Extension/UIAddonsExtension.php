@@ -32,6 +32,7 @@ class UIAddonsExtension extends UIWidgetExtension {
         new \Yepsua\SmarTwigBundle\Twig\TokenParser\BookletTokenParser(),
         new \Yepsua\SmarTwigBundle\Twig\TokenParser\CycleTokenParser(),
         new \Yepsua\SmarTwigBundle\Twig\TokenParser\RingTokenParser(),
+        new \Yepsua\SmarTwigBundle\Twig\TokenParser\UploadTokenParser(),
     );
   }
   

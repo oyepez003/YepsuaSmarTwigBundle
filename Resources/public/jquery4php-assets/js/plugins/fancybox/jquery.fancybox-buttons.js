@@ -1,87 +1,119 @@
+ /*!
+ * Buttons helper for fancyBox
+ * version: 1.0.3
+ * @requires fancyBox v2.0 or later
+ *
+ * Usage:
+ *     $(".fancybox").fancybox({
+ *         helpers : {
+ *             buttons: {
+ *                 position : 'top'
+ *             }
+ *         }
+ *     });
+ *
+ * Options:
+ *     tpl - HTML template
+ *     position - 'top' or 'bottom'
+ *
+ */
 (function ($) {
 	//Shortcut for fancyBox object
 	var F = $.fancybox;
 
 	//Add helper object
 	F.helpers.buttons = {
-		tpl: '<div id="fancybox-buttons"><ul><li><a class="btnPrev" title="Previous" href="javascript:$.fancybox.prev();">Previous</a></li><li><a class="btnPlay" title="Slideshow" href="javascript:$.fancybox.play();;">Play</a></li><li><a class="btnNext" title="Next" href="javascript:$.fancybox.next();">Next</a></li><li><a class="btnToggle" title="Toggle size" href="javascript:$.fancybox.toggle();">Toggle</a></li><li><a class="btnClose" title="Close" href="javascript:$.fancybox.close();">Close</a></li></ul></div>',
-		list: null,
-		buttons: {},
+		tpl  : '<div id="fancybox-buttons"><ul><li><a class="btnPrev" title="Previous" href="javascript:;"></a></li><li><a class="btnPlay" title="Start slideshow" href="javascript:;"></a></li><li><a class="btnNext" title="Next" href="javascript:;"></a></li><li><a class="btnToggle" title="Toggle size" href="javascript:;"></a></li><li><a class="btnClose" title="Close" href="javascript:jQuery.fancybox.close();"></a></li></ul></div>',
+		list : null,
+		buttons: null,
 
-		//Recheck if can toggle size
-		update: function () {
-			var toggle = this.buttons.toggle.removeClass('btnDisabled btnToggleOn');
+		beforeLoad: function (opts, obj) {
+			//Remove self if gallery do not have at least two items
 
-			//Size toggle button
-			if (F.current.canShrink) {
-				toggle.addClass('btnToggleOn');
+			if (opts.skipSingle && obj.group.length < 2) {
+				obj.helpers.buttons = false;
+				obj.closeBtn = true;
 
-			} else if (!F.current.canExpand) {
-				toggle.addClass('btnDisabled');
+				return;
 			}
-		},
 
-		beforeShow: function () {
 			//Increase top margin to give space for buttons
-			F.current.margin[0] += 30;
+			obj.margin[ opts.position === 'bottom' ? 2 : 0 ] += 30;
 		},
 
-		// Update slideshow button
 		onPlayStart: function () {
-			if (this.list) {
-				this.buttons.play.text('Pause').addClass('btnPlayOn');
+			if (this.buttons) {
+				this.buttons.play.attr('title', 'Pause slideshow').addClass('btnPlayOn');
 			}
 		},
 
 		onPlayEnd: function () {
-			if (this.list) {
-				this.buttons.play.text('Play').removeClass('btnPlayOn');
+			if (this.buttons) {
+				this.buttons.play.attr('title', 'Start slideshow').removeClass('btnPlayOn');
 			}
 		},
 
-		afterShow: function () {
-			// Check if initialised
-			if (!this.list) {
-				this.list = $(this.tpl).appendTo('body');
+		afterShow: function (opts, obj) {
+			var buttons = this.buttons;
 
-				this.buttons = {
-					prev : this.list.find('.btnPrev'),
-					next : this.list.find('.btnNext'),
-					play : this.list.find('.btnPlay'),
-					toggle : this.list.find('.btnToggle')
+			if (!buttons) {
+				this.list = $(opts.tpl || this.tpl).addClass(opts.position || 'top').appendTo('body');
+
+				buttons = {
+					prev   : this.list.find('.btnPrev').click( F.prev ),
+					next   : this.list.find('.btnNext').click( F.next ),
+					play   : this.list.find('.btnPlay').click( F.play ),
+					toggle : this.list.find('.btnToggle').click( F.toggle )
 				}
 			}
 
-			//Update navigation buttons
-			if (F.current.index > 0 || F.current.loop) {
-				this.buttons.prev.removeClass('btnDisabled');
+			//Prev
+			if (obj.index > 0 || obj.loop) {
+				buttons.prev.removeClass('btnDisabled');
 			} else {
-				this.buttons.prev.addClass('btnDisabled');
+				buttons.prev.addClass('btnDisabled');
 			}
 
-			if (F.current.loop || F.current.index < F.group.length - 1) {
-				this.buttons.next.removeClass('btnDisabled');
-				this.buttons.play.removeClass('btnDisabled');
+			//Next / Play
+			if (obj.loop || obj.index < obj.group.length - 1) {
+				buttons.next.removeClass('btnDisabled');
+				buttons.play.removeClass('btnDisabled');
 
 			} else {
-				this.buttons.next.addClass('btnDisabled');
-				this.buttons.play.addClass('btnDisabled');
+				buttons.next.addClass('btnDisabled');
+				buttons.play.addClass('btnDisabled');
 			}
 
-			this.update();
+			this.buttons = buttons;
+
+			this.onUpdate(opts, obj);
 		},
 
-		onUpdate: function () {
-			this.update();
+		onUpdate: function (opts, obj) {
+			var toggle;
+
+			if (!this.buttons) {
+				return;
+			}
+
+			toggle = this.buttons.toggle.removeClass('btnDisabled btnToggleOn');
+
+			//Size toggle button
+			if (obj.canShrink) {
+				toggle.addClass('btnToggleOn');
+
+			} else if (!obj.canExpand) {
+				toggle.addClass('btnDisabled');
+			}
 		},
 
-		beforeClose: function (opts) {
+		beforeClose: function () {
 			if (this.list) {
 				this.list.remove();
 			}
 
-			this.list = null;
-			this.buttons = {};
+			this.list    = null;
+			this.buttons = null;
 		}
 	};
 
