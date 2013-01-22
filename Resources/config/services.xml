@@ -119,5 +119,11 @@
       <tag name="twig.extension" alias="html.tags" />
     </service>
     <!-- TWIG EXTENSIONS -->
+    
+    <!-- SMARTWIG FORM TYPE -->
+    <service id="smartwig.form.type.smartwig_datepicker" class="Yepsua\SmarTwigBundle\Form\Type\DatepickerType">
+      <tag name="form.type" alias="ui_datepicker" />
+    </service>
+    
   </services>
 </container>

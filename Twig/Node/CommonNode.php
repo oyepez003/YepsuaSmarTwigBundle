@@ -362,8 +362,9 @@ class CommonNode extends Twig_Node {
       ),
       'timeout' => array('method' => 'timeout'),
       'confirmation' => array('method' => 'confirmation'),  
-      'condition' => array('method' => 'condition'),    
-      'interval' => array('method' => 'setInterval'),  
+      'condition' => array('method' => 'condition'),
+      'interval' => array('method' => 'setInterval'),
+      'options' => array('method' => 'setOptions'),
     );
   }
   
