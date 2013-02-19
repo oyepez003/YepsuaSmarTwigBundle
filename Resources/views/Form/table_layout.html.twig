@@ -1,0 +1,86 @@
+{% extends "form_table_layout.html.twig" %}
+
+{% block form_widget %}
+{% spaceless %}
+    {% if compound %}
+      {% ui_panel %}
+        {{ block('form_widget_compound') }}
+      {% end_ui_panel %}
+    {% else %}
+      {% ui_panel %}
+          {{ block('form_widget_simple') }}
+      {% end_ui_panel %}
+    {% endif %}
+{% endspaceless %}
+{% endblock form_widget %}
+
+{% block form_row %}
+{% spaceless %}
+    <tr>
+        <td style="vertical-align: top;text-transform: capitalize;">
+            {{ form_label(form) }}:
+        </td>
+        <td>
+            {{ form_widget(form) }}
+            {{ form_errors(form) }}
+        </td>
+    </tr>
+{% endspaceless %}
+{% endblock form_row %}
+    
+{% block form_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+        <div class="ui-state-error" style="background: none;border:none">
+        {% for error in errors %}
+            <span>* {{
+                error.messagePluralization is null
+                    ? error.messageTemplate|trans(error.messageParameters, 'validators')
+                    : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
+            }}</span>
+        {% endfor %}
+        </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock form_errors %}
+
+{% block hidden_row %}
+{% spaceless %}
+    <tr style="display: none">
+        <td colspan="2">
+            {{ form_widget(form) }}
+        </td>
+    </tr>
+{% endspaceless %}
+{% endblock hidden_row %}
+
+{% block form_widget_compound %}
+{% spaceless %}
+    <table {{ block('widget_container_attributes') }}>
+        {% if form.parent is empty and errors|length > 0 %}
+        <tr>
+            <td colspan="2">
+                {{ form_errors(form) }}
+            </td>
+        </tr>
+        {% endif %}
+        {{ block('form_rows') }}
+        {{ form_rest(form) }}
+    </table>
+{% endspaceless %}
+{% endblock form_widget_compound %}
+    
+{% block form_label %}
+{% spaceless %}
+    {% if not compound %}
+        {% set label_attr = label_attr|merge({'for': id}) %}
+    {% endif %}
+    {% if required %}
+        {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+    {% endif %}
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+    <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}</label>
+{% endspaceless %}
+{% endblock form_label %}

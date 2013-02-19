@@ -1,0 +1,40 @@
+{# Widgets #}
+{% extends 'form_div_layout.html.twig' %}
+
+{% block ui_datepicker_widget %}
+{% spaceless %}
+
+  {% if form.vars.widget == 'single_text' %}
+
+    {% set value = form.vars.value %}
+
+  {% else %}
+
+    {% if form.year.vars.value is not empty and 
+        form.month.vars.value is not empty and 
+        form.day.vars.value is not empty %}
+
+      {% set value = date_pattern|replace({
+          '{{ year }}':form.year.vars.value,
+          '{{ month }}':form.month.vars.value,
+          '{{ day }}':form.day.vars.value
+         })|raw
+      %}
+
+    {% else %}
+
+      {% set value = ''%}
+
+    {% endif %}
+
+  {% endif %}
+  
+  {{ block('form_widget_simple') }}
+ 
+  {% ui_datepicker
+    builtIn='#' ~ form.vars.id
+    options={'dateFormat' : 'yy-mm-dd', 'changeMonth':true,'changeYear':true}|merge(form.vars.widget_options)
+  %}
+
+{% endspaceless %}
+{% endblock ui_datepicker_widget %}

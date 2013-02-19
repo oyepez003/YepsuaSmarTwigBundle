@@ -1,0 +1,8 @@
+{# Widgets #}
+{% extends 'YepsuaSmarTwigBundle:Form:widgets.html.twig' %}
+
+{% block date_widget %}
+{% spaceless %}
+  {{ block('datepicker_widget') }}
+{% endspaceless %}
+{% endblock date_widget %}
