@@ -11,12 +11,9 @@
 
 namespace Yepsua\SmarTwigBundle\Form\Type;
 
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class DatepickerType extends DateType {
+class DatepickerType extends WidgetType {
   
     /**
      * {@inheritdoc}
@@ -28,7 +25,7 @@ class DatepickerType extends DateType {
         $resolver->setDefaults(array(
             'widget'         => 'single_text',
             'widget_options'  => array(
-              'dateFormat' => 'yy-mm-dd', 
+              'showButtonPanel' => true,
               'changeMonth'=> true, 
               'changeYear'=>  true
             ),
@@ -51,12 +48,10 @@ class DatepickerType extends DateType {
     /**
      * {@inheritdoc}
      */
-    public function finishView(FormView $view, FormInterface $form, array $options)
+    public function getParent()
     {
-        parent::finishView($view, $form, $options);
-        $view->vars['widget_options'] = $options['widget_options'];
+        return 'date';
     }
-    
     
     /**
      * {@inheritdoc}

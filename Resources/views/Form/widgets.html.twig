@@ -1,7 +1,7 @@
 {# Widgets #}
 {% extends 'form_div_layout.html.twig' %}
 
-{% block ui_datepicker_widget %}
+{% block ui_datepicker %}
 {% spaceless %}
 
   {% if form.vars.widget == 'single_text' %}
@@ -31,10 +31,80 @@
   
   {{ block('form_widget_simple') }}
  
+{% endspaceless %}
+{% endblock ui_datepicker %}
+
+{% block ui_datepicker_widget %}
+{% spaceless %}
+  
+  {{ block('ui_datepicker') }}
+ 
   {% ui_datepicker
     builtIn='#' ~ form.vars.id
-    options={'dateFormat' : 'yy-mm-dd', 'changeMonth':true,'changeYear':true}|merge(form.vars.widget_options)
+    options=form.vars.widget_options
   %}
 
 {% endspaceless %}
 {% endblock ui_datepicker_widget %}
+
+{% block ui_date_timepicker_widget %}
+{% spaceless %}
+  
+  {{ block('ui_datepicker') }}
+  {% ui_datepicker
+    builtIn='#' ~ form.vars.id
+    datetime=true
+    options=form.vars.widget_options
+  %}
+
+{% endspaceless %}
+{% endblock ui_date_timepicker_widget %}
+
+{% block ui_timepicker_widget %}
+{% spaceless %}
+  
+  {{ block('ui_datepicker') }}
+ 
+  {% ui_datepicker
+    builtIn='#' ~ form.vars.id
+    time=true
+    options=form.vars.widget_options
+  %}
+
+{% endspaceless %}
+{% endblock ui_timepicker_widget %}
+
+{% block ui_range_datepicker_widget %}
+{% spaceless %}
+  
+  {{ block('ui_datepicker') }}
+ 
+  {% ui_datepicker
+    builtIn='#' ~ form.vars.id
+    range=true
+    options=form.vars.widget_options
+  %}
+
+{% endspaceless %}
+{% endblock ui_range_datepicker_widget %}
+
+{% block ui_picklist_widget %}
+{% spaceless %}
+  
+  {{ block('choice_widget') }}
+  {% if multiple %} 
+    {% ui_picklist options=form.vars.widget_options
+      builtIn='#' ~ form.vars.id %}
+    {% end_ui_picklist %}
+  {% endif %}
+
+{% endspaceless %}
+{% endblock ui_picklist_widget %}
+
+{% block ui_entity_widget %}
+{% spaceless %}
+  
+  {{ block('ui_picklist_widget') }}
+
+{% endspaceless %}
+{% endblock ui_entity_widget %}

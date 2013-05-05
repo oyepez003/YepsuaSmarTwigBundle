@@ -29,3 +29,18 @@
 .wijmo-wijvideo .wijmo-wijvideo-controls li {
     padding: 2px !important;
 }
+
+.ui-jq4php-dialog-footer {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.ui-jq4php-dialog-buttonpane {
+    margin-right: 15px;
+}
+
+hr.ui-widget-content {
+    border-width: 1px 0 0;
+}
