@@ -26,7 +26,7 @@ $ git pull -v --progress  "origin"
 $ git submodule update --init
 ```
 
-## For install on Symfony 2.1.x
+## For install on Symfony 2.1.x or higher
 
 Download and make sure you have the composer.phar latest version running the command:
 
@@ -52,7 +52,7 @@ $ php composer.phar update yepsua/smartwig-bundle
 
 # Configuration
 
-### *** Note: If you are using Sf 2.1.x go to step 3
+### *** Note: If you are using Sf 2.1.x or higher go to step 3
 
 ## 1) Add the Yepsua namespace to your autoloader
 
