@@ -39,7 +39,7 @@ Add the next dependency in the composer.json file
 ``` yml
 "require": {
         ...
-        "yepsua/smartwig-bundle": "1.1.*"
+        "yepsua/smartwig-bundle": "dev-master"
         ...
     },
 ```
