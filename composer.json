@@ -26,7 +26,7 @@
         "php": ">=5.3.2",
         "symfony/framework-bundle": "2.*",
         "yepsua/jQuery4PHP": "1.0.*",
-		"yepsua/smartwig": "v1.*"
+		"yepsua/smartwig": "1.*"
     },
     "autoload": {
         "psr-0": { "Yepsua\\SmarTwigBundle": "" }
