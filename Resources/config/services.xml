@@ -52,7 +52,7 @@
   </parameters>
   <services>
     <!-- TWIG EXTENSIONS -->
-    <service id="twig.extension.jquery.ui.core" class="Yepsua\SmarTwigBundle\Twig\Extension\UICoreExtension">
+    <service id="twig.extension.jquery.ui.core" class="Yepsua\SmarTwig\Twig\Extension\UICoreExtension">
       <tag name="twig.extension" alias="ui.core" />
       <call method="setBuilders">
         <argument type="collection">
@@ -85,7 +85,7 @@
         </argument>   
       </call>      
     </service>
-    <service id="twig.extension.jquery.ui.addons" class="Yepsua\SmarTwigBundle\Twig\Extension\UIAddonsExtension">
+    <service id="twig.extension.jquery.ui.addons" class="Yepsua\SmarTwig\Twig\Extension\UIAddonsExtension">
       <tag name="twig.extension" alias="ui.addons" />
       <call method="setBuilders">
         <argument type="collection">
@@ -109,34 +109,34 @@
         </argument>   
       </call>      
     </service>
-    <service id="twig.extension.js.sintax" class="Yepsua\SmarTwigBundle\Twig\Extension\JsSintaxExtension">
+    <service id="twig.extension.js.sintax" class="Yepsua\SmarTwig\Twig\Extension\JsSintaxExtension">
       <tag name="twig.extension" alias="js.sintax" />
     </service>
-    <service id="twig.extension.jquery.core" class="Yepsua\SmarTwigBundle\Twig\Extension\JQueryCoreExtension">
+    <service id="twig.extension.jquery.core" class="Yepsua\SmarTwig\Twig\Extension\JQueryCoreExtension">
       <tag name="twig.extension" alias="jquery.core" />
     </service>
-    <service id="twig.extension.html.tags" class="Yepsua\SmarTwigBundle\Twig\Extension\HTMLExtension">
+    <service id="twig.extension.html.tags" class="Yepsua\SmarTwig\Twig\Extension\HTMLExtension">
       <tag name="twig.extension" alias="html.tags" />
     </service>
     <!-- TWIG EXTENSIONS -->
     
     <!-- SMARTWIG FORM TYPE -->
-    <service id="form.type.smartwig_datepicker" class="Yepsua\SmarTwigBundle\Form\Type\DatepickerType">
+    <service id="form.type.smartwig_datepicker" class="Yepsua\SmarTwig\Form\Type\DatepickerType">
       <tag name="form.type" alias="ui_datepicker" />
     </service>
-    <service id="form.type.smartwig_timepicker" class="Yepsua\SmarTwigBundle\Form\Type\TimepickerType">
+    <service id="form.type.smartwig_timepicker" class="Yepsua\SmarTwig\Form\Type\TimepickerType">
       <tag name="form.type" alias="ui_timepicker" />
     </service>
-    <service id="form.type.smartwig_date_timepicker" class="Yepsua\SmarTwigBundle\Form\Type\DateTimepickerType">
+    <service id="form.type.smartwig_date_timepicker" class="Yepsua\SmarTwig\Form\Type\DateTimepickerType">
       <tag name="form.type" alias="ui_date_timepicker" />
     </service>
-    <service id="form.type.smartwig_range_datepicker" class="Yepsua\SmarTwigBundle\Form\Type\RangeDatepickerType">
+    <service id="form.type.smartwig_range_datepicker" class="Yepsua\SmarTwig\Form\Type\RangeDatepickerType">
       <tag name="form.type" alias="ui_range_datepicker" />
     </service>
-    <service id="form.type.smartwig_picklist" class="Yepsua\SmarTwigBundle\Form\Type\PickListType">
+    <service id="form.type.smartwig_picklist" class="Yepsua\SmarTwig\Form\Type\PickListType">
       <tag name="form.type" alias="ui_picklist" />
     </service>
-    <service id="form.type.smartwig_entity" class="Yepsua\SmarTwigBundle\Form\Type\EntityType">
+    <service id="form.type.smartwig_entity" class="Yepsua\SmarTwig\Form\Type\EntityType">
       <tag name="form.type" alias="ui_entity" />
     </service>
     
