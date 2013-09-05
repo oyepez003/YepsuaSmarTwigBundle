@@ -1,6 +1,5 @@
 {
     "name": "yepsua/smartwig-bundle",
-    "version": "1.0.0",
     "description": "The jQuery, jQueryUI (and more) Symfony Bundle",
     "keywords": ["templating","twig","extensions","jquery","UI","RIA","jQuery4PHP"],
     "homepage": "http://smartwig.yepsua.com",
