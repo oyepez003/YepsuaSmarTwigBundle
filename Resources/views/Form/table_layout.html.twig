@@ -7,9 +7,7 @@
         {{ block('form_widget_compound') }}
       {% end_ui_panel %}
     {% else %}
-      {% ui_panel %}
-          {{ block('form_widget_simple') }}
-      {% end_ui_panel %}
+        {{ block('form_widget_simple') }}
     {% endif %}
 {% endspaceless %}
 {% endblock form_widget %}

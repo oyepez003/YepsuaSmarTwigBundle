@@ -1,0 +1,30 @@
+.wijmo-wijmenu .wijmo-wijmenu-link{
+    cursor: pointer;
+}
+
+.ui-widget{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+}
+
+.ui-jqgrid .ui-jqgrid-view {
+    font-size: 12px;
+}
+
+.dropdown-menu-visible{
+    display: block;
+    margin: 0px;
+}
+
+.dropdown-menu-panel{
+    display:block;
+    padding: 0px;
+}
+
+.btn-sm {
+    padding: 3px 10px;
+}
+
+span.glyphicon{
+    margin: 2px;
+}
