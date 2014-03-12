@@ -3,7 +3,7 @@
 {% block form_widget %}
 {% spaceless %}
     {% if compound %}
-      {% ui_panel %}
+      {% ui_panel class="crud-form" %}
         {{ block('form_widget_compound') }}
       {% end_ui_panel %}
     {% else %}
