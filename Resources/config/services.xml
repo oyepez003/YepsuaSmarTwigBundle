@@ -121,22 +121,22 @@
     <!-- TWIG EXTENSIONS -->
     
     <!-- SMARTWIG FORM TYPE -->
-    <service id="form.type.smartwig_datepicker" class="Yepsua\SmarTwig\Form\Type\DatepickerType">
+    <service id="form.type.smartwig_datepicker" class="Yepsua\SmarTwigBundle\Form\Type\DatepickerType">
       <tag name="form.type" alias="ui_datepicker" />
     </service>
-    <service id="form.type.smartwig_timepicker" class="Yepsua\SmarTwig\Form\Type\TimepickerType">
+    <service id="form.type.smartwig_timepicker" class="Yepsua\SmarTwigBundle\Form\Type\TimepickerType">
       <tag name="form.type" alias="ui_timepicker" />
     </service>
-    <service id="form.type.smartwig_date_timepicker" class="Yepsua\SmarTwig\Form\Type\DateTimepickerType">
+    <service id="form.type.smartwig_date_timepicker" class="Yepsua\SmarTwigBundle\Form\Type\DateTimepickerType">
       <tag name="form.type" alias="ui_date_timepicker" />
     </service>
-    <service id="form.type.smartwig_range_datepicker" class="Yepsua\SmarTwig\Form\Type\RangeDatepickerType">
+    <service id="form.type.smartwig_range_datepicker" class="Yepsua\SmarTwigBundle\Form\Type\RangeDatepickerType">
       <tag name="form.type" alias="ui_range_datepicker" />
     </service>
-    <service id="form.type.smartwig_picklist" class="Yepsua\SmarTwig\Form\Type\PickListType">
+    <service id="form.type.smartwig_picklist" class="Yepsua\SmarTwigBundle\Form\Type\PickListType">
       <tag name="form.type" alias="ui_picklist" />
     </service>
-    <service id="form.type.smartwig_entity" class="Yepsua\SmarTwig\Form\Type\EntityType">
+    <service id="form.type.smartwig_entity" class="Yepsua\SmarTwigBundle\Form\Type\EntityType">
       <tag name="form.type" alias="ui_entity" />
     </service>
     
