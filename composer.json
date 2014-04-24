@@ -24,8 +24,8 @@
     "require": {
         "php": ">=5.3.2",
         "symfony/framework-bundle": "2.*",
-        "yepsua/jQuery4PHP": "dev-master",
-		"yepsua/smartwig": "dev-master"
+        "yepsua/jQuery4PHP": "1.1.x-dev",
+		"yepsua/smartwig": "1.1.x-dev"
     },
     "autoload": {
         "psr-0": { "Yepsua\\SmarTwigBundle": "" }
