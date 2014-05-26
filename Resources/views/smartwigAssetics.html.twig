@@ -183,3 +183,10 @@
                filter="cssrewrite, yui_css" output='smartwig-assetics/css/plupload.css' %}
     <link rel="stylesheet" type="text/css" href="{{ asset_url | replace({'app_dev.php/': ''}) }}" />
 {% endstylesheets %}
+
+{# related_selects #}
+
+{% javascripts 'bundles/yepsuasmartwig/jquery4php-assets/js/plugins/ehynds/jquery.relatedselects.js'
+               output='smartwig-assetics/js/relatedselects.js' filter='yui_js' %}
+  <script src="{{ asset_url | replace({'app_dev.php/': ''}) }}"></script>
+{% endjavascripts %}

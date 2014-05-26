@@ -49,6 +49,7 @@
     <parameter key="jquery.ui.ring.class">YsJQRing</parameter>
     <parameter key="jquery.ui.video.class">YsUIVideo</parameter>
     <parameter key="jquery.ui.upload.class">YsUpload</parameter>
+    <parameter key="jquery.ui.relatedSelects.class">YsRelatedSelects</parameter>
   </parameters>
   <services>
     <!-- TWIG EXTENSIONS -->
@@ -106,6 +107,7 @@
           <argument key="ui.cycle">%jquery.ui.cycle.class%</argument>
           <argument key="ui.ring">%jquery.ui.ring.class%</argument>
           <argument key="ui.upload">%jquery.ui.upload.class%</argument>
+          <argument key="ui.relatedSelects">%jquery.ui.relatedSelects.class%</argument>
         </argument>   
       </call>      
     </service>
@@ -139,6 +141,5 @@
     <service id="form.type.smartwig_entity" class="Yepsua\SmarTwigBundle\Form\Type\EntityType">
       <tag name="form.type" alias="ui_entity" />
     </service>
-    
   </services>
 </container>
