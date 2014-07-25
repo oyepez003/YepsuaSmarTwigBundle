@@ -23,7 +23,13 @@ JQuery::usePlugin(JQueryConstant::PLUGIN_PNOTYFY);
  * @author oyepez
  */
 class Notification{
-    
+  
+  const NOTICE_LEVEL = 'notice';
+  const ERROR_LEVEL = 'error';
+  const SAY_LEVEL = 'say';
+  const ALARM_LEVEL = 'alarm';
+  const ALERT_LEVEL = 'alert';
+  
   public static function notice($content){
     return self::build(PNotify::notice($content));
   }
@@ -46,5 +52,9 @@ class Notification{
     
   protected static function build($notification){
      return JQuery::newInstance()->execute($notification);
+  }
+  
+  public static function notify($level, $content){
+    return self::$level($content);
   }
 }

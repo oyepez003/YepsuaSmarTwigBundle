@@ -29,6 +29,8 @@
     <parameter key="jquery.ui.tooltip.class">YsUITooltip</parameter>
     <parameter key="jquery.ui.draggable.class">YsUIDraggable</parameter>
     <parameter key="jquery.ui.droppable.class">YsUIDroppable</parameter>
+    <parameter key="jquery.ui.sortable.class">YsUISortable</parameter>
+    <parameter key="jquery.ui.selectable.class">YsUISelectable</parameter>
     <parameter key="jquery.ui.resizable.class">YsUIResizable</parameter>
     <parameter key="jquery.ui.effect.class">YsUIEffect</parameter>
     <parameter key="jquery.ui.blockUI.class">YsBlockUI</parameter>
@@ -80,6 +82,8 @@
           <argument key="ui.tooltip">%jquery.ui.tooltip.class%</argument>
           <argument key="ui.draggable">%jquery.ui.draggable.class%</argument>
           <argument key="ui.droppable">%jquery.ui.droppable.class%</argument>
+          <argument key="ui.sortable">%jquery.ui.sortable.class%</argument>
+          <argument key="ui.selectable">%jquery.ui.selectable.class%</argument>
           <argument key="ui.resizable">%jquery.ui.resizable.class%</argument>
           <argument key="ui.effect">%jquery.ui.effect.class%</argument>
           <argument key="ui.video">%jquery.ui.video.class%</argument>
