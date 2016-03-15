@@ -8,7 +8,7 @@ Is a set of Twig Tags that allow the creation of jQueryUI widgets in an easy way
 
 Create RIA (RICH INTERNET APPLICATIONS) with Symfony2 and jQuery4PHP.
 
-Visit the [showcase](http://smartwig.yepsua.com/web/)
+Visit the [showcase](http://smartwig.yepsua.com)
 
 # Installation
 
