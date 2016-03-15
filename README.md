@@ -123,6 +123,6 @@ $ php app/console assets:install web
 
 Enjoy
 
-[Showcase](http://smartwig.yepsua.com/web/)
+[Showcase](http://smartwig.yepsua.com)
 [Twig](http://www.twig-project.org/)
 [jQuery4PHP](http://jquery4php.sourceforge.net/)
